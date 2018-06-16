@@ -1,6 +1,6 @@
-DROP TABLE books
-DROP TABLE publishers
-DROP TABLE genres
+DROP TABLE books;
+DROP TABLE publishers;
+DROP TABLE genres;
 
 CREATE TABLE publishers(
   id serial8 PRIMARY KEY,
@@ -28,4 +28,4 @@ CREATE TABLE books(
   wholesale_price DECIMAL(8, 3),
   retail_price DECIMAL(8, 3),
   url VARCHAR(255)
-)
+);
