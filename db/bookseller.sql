@@ -10,7 +10,8 @@ CREATE TABLE publishers(
   region varchar(255),
   country VARCHAR(255),
   postcode VARCHAR(255),
-  tel VARCHAR(255)
+  tel VARCHAR(255),
+  email VARCHAR(255)
 );
 
 CREATE TABLE genres(
