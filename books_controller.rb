@@ -104,3 +104,9 @@ post '/publishers/:id' do
   publisher.update()
   redirect to("/publishers/#{params["id"]}")
 end
+
+#index
+get '/genres' do
+  @genres = Genre.all()
+  erb(:"genres/index")
+end

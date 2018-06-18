@@ -1,0 +1,35 @@
+<h1>Categories currently in stock</h1>
+<div class="boxes_big">
+  <div class="boxes">
+    <table class="center">
+      <tr>
+        <th>Name</th>
+      </tr>
+      <% for genre in @genres %>
+      <tr>
+        <td><a href="/publishers/<%= publisher.id %>"><%= publisher.name  %></a></td>
+        <td>|</td>
+        <td><%= genre.name  %></td>
+        <table class="center">
+          <tr><td>
+            <form method="get" action="/books/new">
+              <input class="btn" type="submit" value="Add a new category">
+              <form method="get" action="/books/new">
+                <input class="btn" type="submit" value="Show all books in category">
+              <tr><td>
+              </form>
+            </table>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+<table class="center">
+  <tr><td>
+    <form method="get" action="/books/new">
+      <input class="btn" type="submit" value="Add a new category">
+      <form method="get" action="/books/new">
+        <input class="btn" type="submit" value="Show all books in category">
+      <tr><td>
+      </form>
+    </table>
