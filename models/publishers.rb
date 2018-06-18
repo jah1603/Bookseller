@@ -51,5 +51,4 @@ class Publisher
     return result
   end
 
-
 end

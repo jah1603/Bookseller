@@ -23,6 +23,7 @@ CREATE TABLE books(
   id serial8 PRIMARY KEY,
   title varchar(255),
   author varchar(255),
+  publication_year INT8,
   quantity INT8,
   publisher_id INT8 REFERENCES publishers(id) ON DELETE CASCADE,
   genre_id INT8 REFERENCES genres(id) ON DELETE CASCADE,
