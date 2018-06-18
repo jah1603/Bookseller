@@ -1,0 +1,36 @@
+<h1>Book details</h1>
+
+<div class="row">
+  <div class="col">
+  <table class="center">
+  <tr><td></td></tr>
+  <tr><td></td></tr>
+  <tr><td>Title: </td><td><%= @books.title %></td></tr>
+  <tr><td>Publisher: </td><td><%= @books.publisher %></td></tr>
+  <tr><td>Author: </td><td><%= @books.author %></td></tr>
+  <tr><td>Genre: </td><td><%= @books.genre %></td></tr>
+  <tr><td>Quantity: </td><td class="<%= @books.color() %>"><%= @books.quantity %></td></tr>
+  <tr><td>Wholesale price: </td><td>£<%= @books.wholesale_price %></td></tr>
+  <tr><td>Retail price: </td><td>£<%= @books.retail_price %></td></tr>
+  <tr><td>Markup: </td><td><%= @books.markup() %>%</td></tr>
+  </table>
+  </div>
+  <div class="col">
+   <img src="<%= @books.image() %>">
+ </div>
+</div>
+
+<table class="center">
+  <tr>
+    <td>
+      <form method="get" action="/books/<%= @books.id %>/edit">
+        <input class="btn" type="submit" value="Edit Book">
+      </form>
+    </td>
+    <td>
+      <form method="post" action="/books/<%= @books.id %>/delete">
+        <input class="btn" type="submit" value="Delete Book">
+      </form>
+    </td>
+  </tr>
+</table>
