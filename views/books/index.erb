@@ -33,7 +33,7 @@
         <td>|</td>
         <td>£<%= book.retail_price %></td>
         <td>|</td>
-        <td><%= book.markup() %>%</td>
+        <td><%= book.markup %>%</td>
         <td>|</td>
         <td class="<%= book.color() %>"><%= book.quantity %></td>
       </tr>
@@ -44,7 +44,9 @@
 <table class="center">
   <tr><td>
     <form method="get" action="/books/new">
-      <input class="btn" type="submit" value="Add New Book">
+      <input class="btn" type="submit" value="Log a new book">
+      <form method="get" action="/books/new">
+        <input class="btn" type="submit" value="Log a new sale">
       <tr><td>
       </form>
     </table>

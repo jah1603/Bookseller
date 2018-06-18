@@ -1,8 +1,8 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require('pry-byebug')
-require_relative('../models/books.rb')
-require_relative('../models/publishers.rb')
+require_relative('./models/books.rb')
+require_relative('./models/publishers.rb')
 
 #index
 get '/publishers' do

@@ -1,0 +1,54 @@
+<h1>Publishers whose works are currently in stock</h1>
+<div class="boxes_big">
+  <div class="boxes">
+    <table class="center">
+      <tr>
+        <th>Name</th>
+        <th></th>
+        <th>Address</th>
+        <th></th>
+        <th>City</th>
+        <th></th>
+        <th>Region</th>
+        <th></th>
+        <th>Country</th>
+        <th></th>
+        <th>Postcode</th>
+        <th></th>
+        <th>Telephone no.</th>
+        <th></th>
+        <th>Email</th>
+      </tr>
+      <% for publisher in @publishers %>
+      <tr>
+        <td><a href="/publishers/<%= publisher.id %>"><%= publisher.name  %></a></td>
+        <td>|</td>
+        <td><%= publisher.address  %></td>
+        <td>|</td>
+        <td><%= publisher.city %></td>
+        <td>|</td>
+        <td><%= publisher.region %></td>
+        <td>|</td>
+        <td><%= publisher.country %></td>
+        <td>|</td>
+        <td><%= publisher.postcode %></td>
+        <td>|</td>
+        <td><%= publisher.tel %></td>
+        <td>|</td>
+        <td><%= publisher.email %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+<table class="center">
+  <tr><td>
+    <form method="get" action="/books/new">
+      <input class="btn" type="submit" value="Add a new publisher">
+      <form method="get" action="/books/new">
+      <input class="btn" type="submit" value="Edit a publisher's details">
+      <form method="get" action="/books/new">
+        <input class="btn" type="submit" value="Show all works by a given publisher">
+      <tr><td>
+      </form>
+    </table>
