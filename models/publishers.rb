@@ -26,7 +26,7 @@ class Publisher
       $1, $2, $3, $4, $5, $6, $7, $8
     )
     RETURNING *"
-    values = [@name]
+    values = [@name, @address, @city, @region, @country, @postcode, @tel, @email]
     publisher_data = SqlRunner.run(sql, values)
     @id = publisher_data.first()['id'].to_i
   end

@@ -2,7 +2,7 @@ require_relative('../db/sql-runner')
 
 class Genre
 
-  attr_reader :name,
+  attr_reader :name, :id
 
   def initialize( options )
     @id = options['id'].to_i

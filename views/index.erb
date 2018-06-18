@@ -1,0 +1,27 @@
+<h1>Literary Treasures Bookseller</h1>
+
+<div class="row">
+
+  <div class="col">
+    <iframe width="560" height="315" src="https:<%= @videos.shuffle[0] %>" frameborder="0"  allowfullscreen></iframe>
+  </div>
+
+  <div class="col">
+    <h2>Stock Level Warning</h2>
+
+    <table class="center">
+      <tr>
+        <th>Book</th>
+        <th></th>
+        <th>Quantity</th>
+      </tr>
+      <% for book in @books %>
+      <tr>
+        <td><a href="/books/<%= book.id %>"><%= book.title  %></a></td>
+        <td>|</td>
+        <td class="<%= book.color() %>"><%= book.quantity %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,52 +1,47 @@
 require("minitest/autorun")
 require_relative("../books.rb")
 
-class Testbook < MiniTest::Test
+class TestBook < MiniTest::Test
 
   def setup
     options = {"id" => 1, "title" => "A Tale of Two Cities", "author" => "Charles Dickens",
-      "publication_year" => 1859, "quantity" => 2, "publisher_id" => 1, "genre_id" => 1, "wholesale_price" => "WC2R 0RL", "retail_price" => "+44 0(20) 7139 3000", "url" => "ggillings@penguinrandomhouse.co.uk"}
-    @book = book.new(options)
+      "publication_year" => "1859", "quantity" => 2, "publisher_id" => publisher1.id, "genre_id" => genre1.id, "wholesale_price" => 3.25, "retail_price" => 4.50, "url" => ".../images/Two_cities.jpeg"}
+    @book = Book.new(options)
   end
 
   def test_title()
-    result = @book.name()
-    assert_equal("Penguin Group", result)
+    result = @book.title()
+    assert_equal("A Tale of Two Cities", result)
   end
 
   def test_author()
-    result = @book.address()
-    assert_equal("80 Strand", result)
+    result = @book.author()
+    assert_equal("Charles Dickens", result)
   end
 
-  def test_city()
-    result = @book.city()
-    assert_equal("London", result)
+  def test_publication_year()
+    result = @book.publication_year()
+    assert_equal("1859", result)
   end
 
-  def test_region()
-    result = @book.region()
-    assert_equal("Greater London", result)
+  def test_quantity()
+    result = @book.quantity()
+    assert_equal(2, result)
   end
 
-  def test_country()
-    result = @book.country()
-    assert_equal("United Kingdom", result)
+  def wholesale_price()
+    result = @book.wholesale_price()
+    assert_equal(3.25, result)
   end
 
-  def test_postcode()
-    result = @book.postcode()
-    assert_equal("WC2R 0RL", result)
+  def test_retail_price()
+    result = @book.retail_price()
+    assert_equal(4.50, result)
   end
 
-  def test_tel()
-    result = @book.tel()
-    assert_equal("+44 0(20) 7139 3000", result)
-  end
-
-  def test_email()
-    result = @book.email()
-    assert_equal("ggillings@penguinrandomhouse.co.uk", result)
+  def test_url()
+    result = @book.url()
+    assert_equal(".../images/Two_cities.jpeg", result)
   end
 
 end
