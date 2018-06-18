@@ -33,7 +33,7 @@ book1 = Book.new({
   "genre_id" => genre1.id,
   "wholesale_price" => 3.25,
   "retail_price" => 4.50,
-  "url" => "../public/images/Two_cities.jpeg"
+  "url" => "../public/images/Two_cities.jpg"
   })
 book1.save()
 

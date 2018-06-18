@@ -1,6 +1,6 @@
 body {
   background-color: #FFF;
-  background: url("../images/Two_cities.jpeg");
+  background: url(".../public/images/Two_cities.jpg");
   background-repeat: repeat;
   margin: 0;
   padding: 0;
@@ -47,7 +47,7 @@ body {
 
 h1 {
   text-align: center;
-  color: orange;
+  color: midnightblue;
 }
 
 ul {
@@ -58,7 +58,7 @@ ul {
 li {
   color: Black;
   display: inline-block;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Times New Roman', sans-serif;
   font-size: 16px;
   text-align: left;
   font-weight: 300;

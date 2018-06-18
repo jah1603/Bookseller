@@ -1,0 +1,21 @@
+td, th {
+  text-align: left;
+}
+
+td {
+  padding: 10px 20px 0px 0px;
+}
+
+th {
+  padding: 0px 20px 5px 0px;
+  border-bottom: 2.5px solid teal;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table.center {
+   margin: 0 auto;
+   vertical-align: middle;
+ }
