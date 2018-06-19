@@ -1,4 +1,4 @@
-<h1>Books currently in stock</h1>
+<h1>Books currently in stock (click book title for details)</h1>
 <div class="boxes_big">
   <div class="boxes">
     <table class="center">
@@ -8,6 +8,8 @@
         <th>Author</th>
         <th></th>
         <th>Publisher</th>
+        <th></th>
+        <th>Publication year</th>
         <th></th>
         <th>Genre</th>
         <th></th>
@@ -26,6 +28,8 @@
         <td><%= book.author  %></td>
         <td>|</td>
         <td><%= book.publisher %></td>
+        <td>|</td>
+        <td><%= book.publication_year  %></td>
         <td>|</td>
         <td><%= book.genre %></td>
         <td>|</td>
