@@ -8,11 +8,11 @@
         <tr>
           <td>
             <label for="book-title">Title: </label>
-            <input id="book-title" type="text" style="width: 250px;" name="name">
+            <input id="book-title" type="text" style="width: 250px;" name="name" value="<%=@books.title %>"">
           </td>
           <td>
             <label for="book-year">Publication year: </label>
-            <input id="book-year" type="text" style="width: 100px;" name="name">
+            <input id="book-year" type="text" style="width: 100px;" name="name" value="<%=@books.publication_year %>">
           </td>
           <td>
           <label for="select-genre">Select genre: </label>
@@ -36,21 +36,21 @@
         <tr>
           <td>
               <label for="game-quantity">Quantity: </label>
-              <input id="game-quantity" type="number" min="0" style="width: 75px;" name="quantity">
+              <input id="game-quantity" type="number" min="0" style="width: 75px;" name="quantity" value="<%=@books.quantity %>">
           </td>
           <td>
             <label for="game-cost_price">Wholesale price: £</label>
-            <input id="game-cost_price" type="number" step="0.01" min="0" style="width: 50px;" name="wholesale_price">
+            <input id="game-cost_price" type="number" step="0.01" min="0" style="width: 50px;" name="wholesale_price" value="<%=@books.wholesale_price %>">
           </td>
           <td>
             <label for="book-retail_price">Retail price: £</label>
-            <input id="book-retail_price" type="number" step="0.01" min="0" style="width: 50px;" name="sell_price">
+            <input id="book-retail_price" type="number" step="0.01" min="0" style="width: 50px;" name="sell_price" value="<%=@books.retail_price %>">
           </td>
         </tr>
         <tr>
           <td>
             <label for="book-url">Image: </label>
-            <input id="book-url" type="text" style="width: 250px;" name="url">
+            <input id="book-url" type="text" style="width: 250px;" name="url" value="<%=@books.url %>">
           </td>
           <td>
             <input class="btn" type="submit" value="Add book">
