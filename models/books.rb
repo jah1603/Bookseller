@@ -2,10 +2,9 @@ require_relative('../db/sql-runner')
 
 class Book
 
-  attr_accessor :title, :author, :publication_year, :quantity, :publisher_id, :genre_id, :wholesale_price, :retail_price, :url
-  attr_reader :id
+  attr_accessor :title, :author, :publication_year, :quantity, :publisher_id, :genre_id, :wholesale_price, :retail_price, :url, :id
 
-  def initialize( options )
+  def initialize(options)
     @id = options['id'].to_i
     @title = options['title']
     @author = options['author']
@@ -33,8 +32,29 @@ class Book
     @id = book_data.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE books SET
+    title = '#{@title}',
+    author = '#{@author}',
+    publication_year = '#{@publication_year}',
+    quantity = '#{@quantity}',
+    publisher_id = '#{@publisher_id}',
+    genre_id = '#{@genre_id}',
+    wholesale_price = '#{@wholesale_price}',
+    retail_price = '#{@retail_price}',
+    url = '#{@url}'
+    WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
+
   def self.delete_all()
     sql = "DELETE FROM books;"
+    SqlRunner.run(sql)
+  end
+
+  def delete()
+    sql = "DELETE FROM books WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 

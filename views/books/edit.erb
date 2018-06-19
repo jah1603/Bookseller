@@ -8,11 +8,11 @@
         <tr>
           <td>
             <label for="book-title">Title: </label>
-            <input id="book-title" type="text" style="width: 250px;" name="name" value="<%=@books.title %>"">
+            <input id="book-title" type="text" style="width: 250px;" name="name" value="<%=@books.title %>">
           </td>
           <td>
-            <label for="book-year">Publication year: </label>
-            <input id="book-year" type="text" style="width: 100px;" name="name" value="<%=@books.publication_year %>">
+            <label for="book-title">Publication year: </label>
+            <input id="book-year" type="text" style="width: 100px;" name="publication_year" value="<%=@books.publication_year %>">
           </td>
           <td>
           <label for="select-genre">Select genre: </label>
@@ -53,7 +53,7 @@
             <input id="book-url" type="text" style="width: 250px;" name="url" value="<%=@books.url %>">
           </td>
           <td>
-            <input class="btn" type="submit" value="Add book">
+            <input class="btn" type="submit" value="Store updated book details">
           </td>
         </tr>
       </form>

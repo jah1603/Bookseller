@@ -47,18 +47,18 @@ post '/books' do
   redirect to("/books")
 end
 
-#delete
-post '/books/:id/delete' do
-  book = Book.find(params['id'].to_i())
-  book.delete()
-  redirect to("/books")
-end
-
 #update
 post '/books/:id' do
   book = Book.new(params)
   book.update()
   redirect to("/books/#{params["id"]}")
+end
+
+#delete
+post '/books/:id/delete' do
+  book = Book.find(params['id'].to_i())
+  book.delete()
+  redirect to("/books")
 end
 
 #index
