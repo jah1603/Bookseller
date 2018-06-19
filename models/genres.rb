@@ -1,4 +1,6 @@
 require_relative('../db/sql-runner')
+require_relative('../models/books.rb')
+require_relative('../models/publishers.rb')
 
 class Genre
 
@@ -28,6 +30,22 @@ class Genre
     sql = "DELETE FROM genres;"
     SqlRunner.run(sql)
   end
+
+  def publisher()
+  sql = "SELECT publishers.* FROM publishers
+  INNER JOIN books ON books.publisher_id = publishers.id
+  WHERE genre_id = $1"
+  values = [@id]
+  publishers = SqlRunner.run(sql, values)
+  return Publisher.map_items(publishers)
+end
+
+def book()
+  sql = "SELECT books.* FROM books WHERE genre_id = $1"
+  values = [@id]
+  books = SqlRunner.run(sql, values)
+  return Book.map_items(books)
+end
 
   def self.all()
     sql = "SELECT * FROM genres"

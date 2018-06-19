@@ -76,6 +76,10 @@ def genre()
   return genre.name
 end
 
+def self.map_items(book_data)
+  return book_data.map { |book| Book.new(book) }
+end
+
 def markup()
   margin = @retail_price - @wholesale_price
   markup = (margin * 100) / @wholesale_price

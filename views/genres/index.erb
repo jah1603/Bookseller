@@ -3,22 +3,20 @@
   <div class="boxes">
     <table class="center">
       <tr>
-        <th>Name</th>
       </tr>
       <% for genre in @genres %>
       <tr>
-        <td><a href="/publishers/<%= publisher.id %>"><%= publisher.name  %></a></td>
-        <td>|</td>
-        <td><%= genre.name  %></td>
-        <table class="center">
-          <tr><td>
-            <form method="get" action="/books/new">
-              <input class="btn" type="submit" value="Add a new category">
-              <form method="get" action="/books/new">
-                <input class="btn" type="submit" value="Show all books in category">
-              <tr><td>
-              </form>
-            </table>
+        <td><%= genre.name  %>
+          <table class="center">
+            <tr><td>
+                <form method="get" action="/books/new">
+                  <input class="btn" type="submit" value="Show <%= genre.name  %> books">
+                  <form method="get" action="/books/new">
+                    <input class="btn" type="submit" value="Show <%= genre.name  %> publishers">
+                <tr><td>
+                </form>
+              </table>
+        </td>
       </tr>
       <% end %>
     </table>
@@ -28,8 +26,5 @@
   <tr><td>
     <form method="get" action="/books/new">
       <input class="btn" type="submit" value="Add a new category">
-      <form method="get" action="/books/new">
-        <input class="btn" type="submit" value="Show all books in category">
-      <tr><td>
       </form>
     </table>

@@ -1,5 +1,5 @@
 td, th {
-  text-align: left;
+  text-align: center;
 }
 
 td {
@@ -8,7 +8,7 @@ td {
 
 th {
   padding: 0px 20px 5px 0px;
-  border-bottom: 2.5px solid teal;
+  border-bottom: 1.5px solid teal;
 }
 
 table {

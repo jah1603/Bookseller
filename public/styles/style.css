@@ -6,6 +6,8 @@ body {
   padding: 0;
 }
 
+
+
 .menu {
     background-color: azure;
     border-bottom: 0px solid #466995;
@@ -43,6 +45,8 @@ body {
   padding: 8px 25px;
   color: white;
   cursor:pointer;
+  margin-left: auto;
+  margin-right: auto;
   display: inline-block;
   text-align: center;
   font-family: 'Times New Roman', sans-serif;
@@ -50,6 +54,7 @@ body {
   color: DeepSkyBlue;
   opacity: 0.9;
   transition: 0.5s;
+  alignment: center;
 }
 
 .btn:hover {

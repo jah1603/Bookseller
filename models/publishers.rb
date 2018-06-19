@@ -51,4 +51,8 @@ class Publisher
     return result
   end
 
+  def self.map_items(publisher_data)
+    return publisher_data.map { |publisher| Publisher.new(publisher) }
+  end
+
 end
