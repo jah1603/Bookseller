@@ -53,6 +53,7 @@
             <input id="book-url" type="text" style="width: 250px;" name="url" value="<%=@books.url %>">
           </td>
           <td>
+            <form method="post" action="/books/<%= @books.id %>">
             <input class="btn" type="submit" value="Store updated book details">
           </td>
         </tr>
