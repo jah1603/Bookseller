@@ -1,10 +1,10 @@
-<h1>Please enter the following details to add a new book to the inventory.</h1>
+<h1>Please enter the updated details.</h1>
 
 <div class="boxes_big">
   <div class="boxes">
 
     <table class="center">
-      <form method="post" action="/books">
+      <form method="post" action="/books/edit">
         <tr>
           <td>
             <label for="book-title">Title: </label>
@@ -19,14 +19,14 @@
           <select id="select-genre" name="genre_id">
               <option value="" selected disabled>
             <% for genre in @genres %>
-            <option value = "<%= genre.id %>"><%= genre.name %></option>
+            <option value = "<%= genre.id %>"><%= genre.name %> <%= "selected" if genre == genre.name%></option>
             <% end %>
           </select>
           </td>
           <td>
             <label for="select-publisher">Select publisher: </label>
             <select id="select-publisher" name="publisher_id">
-                <option value="" selected disabled>
+              <option value="" selected disabled>
               <% for publisher in @publishers %>
               <option value = "<%= publisher.id %>"><%= publisher.name %></option>
               <% end %>

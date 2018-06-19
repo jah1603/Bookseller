@@ -86,22 +86,22 @@ def markup()
   return markup.to_f.round(1)
 end
 
-  def color()
-    if @quantity >= 5
-      result = "green"
-    else
-      result = "red"
-    end
-    return result.to_s
+def color()
+  if @quantity >= 5
+    result = "green"
+  else
+    result = "red"
   end
+  return result.to_s
+end
 
-  def image()
-    if @url.empty?
-      image = "/images/no_image.png"
-    else
-      image = @url
-    end
-    return image
+def image()
+  if @url.empty?
+    image = "/images/no_image.png"
+  else
+    image = @url
   end
+  return image
+end
 
 end

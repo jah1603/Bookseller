@@ -128,7 +128,7 @@ book2 = Book.new({
   "genre_id" => genre1.id,
   "wholesale_price" => 2.25,
   "retail_price" => 5.50,
-  "url" => "/images/Wuthering_heights.jpeg"
+  "url" => "/images/wuthering_heights.jpeg"
   })
 book2.save()
 
@@ -141,7 +141,7 @@ book3 = Book.new({
   "genre_id" => genre1.id,
   "wholesale_price" => 3.60,
   "retail_price" => 4.25,
-  "url" => "/images/Two_cities.jpeg"
+  "url" => "/images/lord_of_the_flies.jpeg"
   })
 book3.save()
 
