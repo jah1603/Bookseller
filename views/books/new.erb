@@ -48,7 +48,7 @@
           </td>
           <td>
             <label for="book-retail_price">Retail price: £</label>
-            <input id="book-retail_price" type="number" step="0.01" min="0" style="width: 50px;" name="sell_price">
+            <input id="book-retail_price" type="number" step="0.01" min="0" style="width: 50px;" name="retail_price">
           </td>
         </tr>
         <tr>
@@ -57,7 +57,7 @@
             <input id="book-url" type="text" style="width: 250px;" name="url">
           </td>
           <td>
-            <form method="get" action="/books">
+            <form method="post" action="/books">
             <input class="btn" type="submit" value="Add book">
           </td>
         </tr>
