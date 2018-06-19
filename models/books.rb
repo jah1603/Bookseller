@@ -2,7 +2,7 @@ require_relative('../db/sql-runner')
 
 class Book
 
-  attr_accessor :title, :author, :publication_year, :quantity, :publisher_id, :genre_id, :wholesale_price, :retail_price, :url, :id
+  attr_accessor :title, :author, :publication_year, :quantity, :publisher_id, :genre_id, :wholesale_price, :retail_price, :url, :summary, :id
 
   def initialize(options)
     @id = options['id'].to_i
@@ -15,19 +15,20 @@ class Book
     @wholesale_price = options['wholesale_price'].to_f.round(2)
     @retail_price = options['retail_price'].to_f.round(2)
     @url = options['url']
+    @summary = options['summary']
   end
 
   def save()
     sql = "INSERT INTO books
     (
-      title, author, publication_year, quantity, publisher_id, genre_id, wholesale_price, retail_price, url
+      title, author, publication_year, quantity, publisher_id, genre_id, wholesale_price, retail_price, url, summary
     )
     VALUES
     (
-      $1, $2, $3, $4, $5, $6, $7, $8, $9
+      $1, $2, $3, $4, $5, $6, $7, $8, $9, $10
     )
     RETURNING *"
-    values = [@title, @author, @publication_year, @quantity, @publisher_id, @genre_id, @wholesale_price, @retail_price, @url]
+    values = [@title, @author, @publication_year, @quantity, @publisher_id, @genre_id, @wholesale_price, @retail_price, @url, @summary]
     book_data = SqlRunner.run(sql, values)
     @id = book_data.first()['id'].to_i
   end
@@ -42,7 +43,8 @@ class Book
     genre_id = '#{@genre_id}',
     wholesale_price = '#{@wholesale_price}',
     retail_price = '#{@retail_price}',
-    url = '#{@url}'
+    url = '#{@url}',
+    summary = '#{@summary}'
     WHERE id = #{@id}"
     SqlRunner.run(sql)
   end

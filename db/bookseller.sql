@@ -29,5 +29,6 @@ CREATE TABLE books(
   genre_id INT8 REFERENCES genres(id) ON DELETE CASCADE,
   wholesale_price DECIMAL(8, 3),
   retail_price DECIMAL(8, 3),
-  url VARCHAR(255)
+  url VARCHAR(255),
+  summary VARCHAR(255)
 );
