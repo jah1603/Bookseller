@@ -46,11 +46,21 @@
   </div>
 </div>
 <table class="center">
-  <tr><td>
-    <form method="get" action="/books/new">
-      <input class="btn" type="submit" value="Log a new book">
+  <tr>
+    <td>
       <form method="get" action="/books/new">
-        <input class="btn" type="submit" value="Log a new sale">
-      <tr><td>
+        <input class="btn" type="submit" value="Log a new book">
       </form>
-    </table>
+    </td>
+    <td>
+      <form method="get" action="/books/<%= book.id %>/edit">
+        <input class="btn" type="submit" value="Log a new sale">
+      </form>
+    </td>
+    <td>
+      <form method="post" action="/books/images">
+        <input class="btn" type="submit" value="Browse books by image">
+      </form>
+    </td>
+  </tr>
+</table>

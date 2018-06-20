@@ -42,13 +42,26 @@
   </div>
 </div>
 <table class="center">
-  <tr><td>
+  <tr>
+    <td>
       <form method="get" action="/publishers">
         <input class="btn" type="submit" value="Back to publishers">
-    <form method="get" action="/books/new">
-      <input class="btn" type="submit" value="Log a new book">
-      <form method="get" action="/books/new">
-        <input class="btn" type="submit" value="Log a new sale">
-      <tr><td>
       </form>
-    </table>
+    </td>
+    <td>
+      <form method="get" action="/books/<%= book.id %>/edit">
+        <input class="btn" type="submit" value="Log a new book">
+      </form>
+    </td>
+    <td>
+      <form method="post" action="/books/images">
+        <input class="btn" type="submit" value="Log a new sale">
+      </form>
+    </td>
+    <td>
+      <form method="get" action="/publishers/<%= @publishers.id %>/images">
+        <input class="btn" type="submit" value="Browse books by image">
+      </form>
+    </td>
+  </tr>
+</table>

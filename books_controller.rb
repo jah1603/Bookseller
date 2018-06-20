@@ -15,8 +15,12 @@ end
 #main index
 get '/' do
   @books = Book.all_low()
-  @videos = Video.all()
   erb(:index)
+end
+
+get '/books/images' do
+  @books = Book.all_low()
+  erb(:"books/indeximages")
 end
 
 #new
@@ -73,9 +77,9 @@ get '/publishers/new' do
 end
 
 #edit
-get '/publishers/:id/edit' do
-  @publishers = Publisher.find(params['id'].to_i())
-  erb(:"publishers/edit")
+get '/publishers/edit' do
+  @publishers = Publisher.all()
+  erb(:"publishers/editchoose")
 end
 
 #show
@@ -97,6 +101,12 @@ get '/publishers/:id/books' do
   erb(:"publishers/books")
 end
 
+get '/publishers/:id/images' do
+  @publishers = Publisher.find(params['id'].to_i())
+  @books = @publishers.book()
+  erb(:"publishers/booksimages")
+end
+
 #delete
 post '/publishers/:id/delete' do
   publisher = Publisher.find(params['id'].to_i())
@@ -108,7 +118,7 @@ end
 post '/publishers/:id' do
   publisher = Publisher.new(params)
   publisher.update()
-  redirect to("/publishers/#{params["id"]}")
+  redirect to("/publishers/")
 end
 
 #index

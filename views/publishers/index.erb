@@ -1,9 +1,11 @@
-<h1>Publishers stocked (click publisher name for details)</h1>
+<h1>Publishers stocked</h1>
 <div class="row">
   <div class="col">
   <table class="center">
   <tr>
     <th>Name</th>
+    <th></th>
+    <th>Works stocked</th>
     <th></th>
     <th>Address</th>
     <th></th>
@@ -18,13 +20,13 @@
     <th>Telephone no.</th>
     <th></th>
     <th>Email address</th>
-    <th></th>
-    <th>Works stocked</th>
   </tr>
   </div>
     <% for publisher in @publishers %>
     <tr>
       <td><a href="/publishers/<%= publisher.id %>"><%= publisher.name  %></a></td>
+      <td>|</td>
+      <td><a href="/publishers/<%= publisher.id %>/books">Click to view</a></td>
       <td>|</td>
       <td><%= publisher.address  %></td>
       <td>|</td>
@@ -39,8 +41,6 @@
       <td><%= publisher.tel %></td>
       <td>|</td>
       <td><%= publisher.email %></td>
-      <td>|</td>
-      <td><a href="/publishers/<%= publisher.id %>/books">Click to view</a></td>
     </tr>
     <% end %>
  </div>
@@ -49,9 +49,14 @@
   </div>
 </div>
 <table class="center">
-  <tr><td>
+  <td>
     <form method="get" action="/publishers/new">
       <input class="btn" type="submit" value="Add a new publisher">
-      <tr><td>
+    </td>
       </form>
+      <td>
+        <form method="get" action="/publishers/edit">
+          <input class="btn" type="submit" value="Edit an existing publisher">
+        </td>
+          </form>
     </table>

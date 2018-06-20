@@ -1,0 +1,91 @@
+<h1>Please change the fields you wish to update.</h1>
+
+<div class="boxes_big">
+  <div class="boxes">
+
+    <table class="center">
+      <form method="post" action="/publishers/">
+          <td>
+            <label for="publisher-name">Name: </label>
+            <select id="select-publisher" name="publisher_id">
+              <% for publisher in @publishers %>
+              <option value = "<%= publisher.id %>"><%= publisher.name %></option>
+              <% end %>
+            </select>
+          </td>
+          <td>
+            <label for="publisher-address">Address: </label>
+            <input list="addresses" name="addresses" style="width: 150px;">
+              <datalist id="addresses">
+                <% for publisher in @publishers %>
+                <option value="<%= publisher.address %>"><%= publisher.name %></option>
+                <% end %>
+              </datalist>
+          </td>
+          <td>
+            <label for="publisher-city">City: </label>
+            <input list="city" name="cities" style="width: 150px;">
+              <datalist id="cities">
+                <% for publisher in @publishers %>
+                <option value="<%= publisher.city %>"><%= publisher.name %></option>
+                <% end %>
+              </datalist>
+          </td>
+          <td>
+            <label for="publisher-region">Region: </label>
+            <input list="regions" name="regions" style="width: 150px;">
+              <datalist id="regions">
+                <% for publisher in @publishers %>
+                <option value="<%= publisher.region %>"><%= publisher.name %></option>
+                <% end %>
+              </datalist>
+          </td>
+          <tr align = >
+            <td>
+              <label for="publisher-country">Country: </label>
+              <input list="countries" name="countries" style="width: 150px;">
+                <datalist id="countries">
+                  <% for publisher in @publishers %>
+                  <option value="<%= publisher.country %>"><%= publisher.name %></option>
+                  <% end %>
+                </datalist>
+            </td>
+            <td>
+              <label for="publisher-postcode">Postcode: </label>
+              <input list="postcodes" name="postcodes" style="width: 150px;">
+                <datalist id="postcodes">
+                  <% for publisher in @publishers %>
+                  <option value="<%= publisher.postcode %>"><%= publisher.name %></option>
+                  <% end %>
+                </datalist>
+            </td>
+            <td>
+              <label for="publisher-telephone">Telephone: </label>
+              <input list="telephones" name="telephones" style="width: 150px;">
+                <datalist id="telephones">
+                  <% for publisher in @publishers %>
+                  <option value="<%= publisher.tel %>"><%= publisher.name %></option>
+                  <% end %>
+                </datalist>
+            </td>
+            <td>
+              <label for="publisher-email">Email: </label>
+              <input list="emails" name="emails" style="width: 150px;">
+                <datalist id="emails">
+                  <% for publisher in @publishers %>
+                  <option value="<%= publisher.email %>"><%= publisher.name %></option>
+                  <% end %>
+                </datalist>
+            </td>
+        </tr>
+      </form>
+    </table>
+  </div>
+</div>
+<table class="center">
+  <form method="post" action="/publishers/<%=publisher.id%>">
+  <td>
+    <input align="center" class="btn" type="submit" value="Store updated details">
+  </td>
+      </form>
+    </table>
