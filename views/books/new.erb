@@ -11,30 +11,35 @@
             <input id="book-title" type="text" style="width: 250px;" name="title">
           </td>
           <td>
-            <label for="book-year">Author: </label>
-            <input id="book-year" type="text" style="width: 100px;" name="author">
+            <label for="book-author">Author: </label>
+            <input list="authors" name="authors" style="width: 150px;">
+              <datalist id="authors">
+                <% for book in @books %>
+                <option value="<%= book.author %>"></option>
+                <% end %>
+              </datalist>
           </td>
           <td>
             <label for="book-year">Publication year: </label>
             <input id="book-year" type="text" style="width: 100px;" name="publication_year">
           </td>
           <td>
-          <label for="select-genre">Select genre: </label>
-          <select id="select-genre" name="genre_id">
-              <option value="" selected disabled>
-            <% for genre in @genres %>
-            <option value = "<%= genre.id %>"><%= genre.name %></option>
-            <% end %>
-          </select>
+            <label for="publisher-name">Publisher: </label>
+            <input list="names" name="names" style="width: 150px;">
+              <datalist id="names">
+                <% for publisher in @publishers %>
+                <option value="<%= publisher.name %>"></option>
+                <% end %>
+              </datalist>
           </td>
           <td>
-            <label for="select-publisher">Select publisher: </label>
-            <select id="select-publisher" name="publisher_id">
-              <option value="" selected disabled>
-              <% for publisher in @publishers %>
-              <option value = "<%= publisher.id %>"><%= publisher.name %></option>
-              <% end %>
-            </select>
+            <label for="genre-name">Genre: </label>
+            <input list="genres" name="genres" style="width: 150px;">
+              <datalist id="genres">
+                <% for genre in @genres %>
+                <option value="<%= genre.name %>"></option>
+                <% end %>
+              </datalist>
           </td>
         </tr>
         <tr>
