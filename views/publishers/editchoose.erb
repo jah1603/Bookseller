@@ -24,7 +24,7 @@
           </td>
           <td>
             <label for="publisher-city">City: </label>
-            <input list="city" name="cities" style="width: 150px;">
+            <input list="cities" name="cities" style="width: 150px;">
               <datalist id="cities">
                 <% for publisher in @publishers %>
                 <option value="<%= publisher.city %>"><%= publisher.name %></option>

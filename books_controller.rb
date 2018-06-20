@@ -118,7 +118,7 @@ end
 post '/publishers/:id' do
   publisher = Publisher.new(params)
   publisher.update()
-  redirect to("/publishers/")
+  redirect to("/publishers")
 end
 
 #index
