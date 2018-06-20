@@ -119,7 +119,7 @@ end
 
 def image()
   if @url.empty?
-    image = "/images/no_image.jpg"
+    image = "/images/no-book-image.jpg"
   else
     image = @url
   end
