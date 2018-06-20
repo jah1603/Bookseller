@@ -91,6 +91,12 @@ post '/publishers' do
   redirect to ("/publishers")
 end
 
+get '/publishers/:id/books' do
+  @publishers = Publisher.find(params['id'].to_i())
+  @books = @publishers.book()
+  erb(:"publishers/books")
+end
+
 #delete
 post '/publishers/:id/delete' do
   publisher = Publisher.find(params['id'].to_i())

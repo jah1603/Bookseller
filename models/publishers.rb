@@ -1,4 +1,5 @@
 require_relative('../db/sql-runner')
+require_relative('../models/books.rb')
 
 class Publisher
 
@@ -50,13 +51,6 @@ class Publisher
     SqlRunner.run(sql)
   end
 
-  def book()
-    sql = "SELECT books.* FROM books WHERE publisher_id = $1"
-    values = [@id]
-    books = SqlRunner.run(sql, values)
-    return Book.map_items(books)
-  end
-
   def self.all()
     sql = "SELECT * FROM publishers"
     publishers = SqlRunner.run( sql )
@@ -68,8 +62,15 @@ class Publisher
     sql = "SELECT * FROM publishers WHERE id = $1"
     values = [id]
     publisher = SqlRunner.run( sql, values )
-    result = publisher.new( publisher.first )
+    result = Publisher.new( publisher.first )
     return result
+  end
+
+  def book()
+    sql = "SELECT books.* FROM books WHERE publisher_id = $1"
+    values = [@id]
+    books = SqlRunner.run(sql, values)
+    return Book.map_items(books)
   end
 
   def self.map_items(publisher_data)

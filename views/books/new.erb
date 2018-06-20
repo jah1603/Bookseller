@@ -30,7 +30,7 @@
           <td>
             <label for="select-publisher">Select publisher: </label>
             <select id="select-publisher" name="publisher_id">
-                <option value="" selected disabled>
+              <option value="" selected disabled>
               <% for publisher in @publishers %>
               <option value = "<%= publisher.id %>"><%= publisher.name %></option>
               <% end %>
@@ -39,12 +39,12 @@
         </tr>
         <tr>
           <td>
-              <label for="game-quantity">Quantity: </label>
-              <input id="game-quantity" type="number" min="0" style="width: 75px;" name="quantity">
+              <label for="book-quantity">Quantity: </label>
+              <input id="book-quantity" type="number" min="0" style="width: 75px;" name="quantity">
           </td>
           <td>
-            <label for="game-cost_price">Wholesale price: £</label>
-            <input id="game-cost_price" type="number" step="0.01" min="0" style="width: 50px;" name="wholesale_price">
+            <label for="book-cost_price">Wholesale price: £</label>
+            <input id="book-cost_price" type="number" step="0.01" min="0" style="width: 50px;" name="wholesale_price">
           </td>
           <td>
             <label for="book-retail_price">Retail price: £</label>

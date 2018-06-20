@@ -20,7 +20,7 @@ publisher1 = Publisher.new({
 publisher1.save()
 
 publisher2 = Publisher.new({
-  "name" => "Penguins Group",
+  "name" => "Penguin Classics",
   "address" => "80 Strand",
   "city" => "London",
   "region" => "Greater London",
@@ -158,7 +158,7 @@ book4 = Book.new({
   "author" => "William Golding",
   "publication_year" => "1954",
   "quantity" => 2,
-  "publisher_id" => publisher1.id,
+  "publisher_id" => publisher2.id,
   "genre_id" => genre1.id,
   "wholesale_price" => 3.60,
   "retail_price" => 4.25,
