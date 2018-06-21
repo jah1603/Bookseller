@@ -128,4 +128,12 @@ def image()
   return image
 end
 
+def wholesale_price
+  return '%.2f' % @wholesale_price
+end
+
+def retail_price
+  return '%.2f' % @retail_price
+end
+
 end
