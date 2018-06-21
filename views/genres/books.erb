@@ -18,6 +18,8 @@
         <th>Markup</th>
         <th></th>
         <th>Quantity</th>
+        <th></th>
+        <th>Copies sold</th>
       </tr>
       <% for book in @books %>
       <tr>
@@ -36,6 +38,8 @@
         <td><%= book.markup %>%</td>
         <td>|</td>
         <td class="<%= book.color() %>"><%= book.quantity %></td>
+        <td>|</td>
+        <td><%= book.copies_sold %></td>
       </tr>
       <% end %>
     </table>

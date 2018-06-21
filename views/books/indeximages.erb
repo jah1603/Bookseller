@@ -18,7 +18,6 @@
   </table>
   <tr><%= book.summary %></tr>
   </div>
-  <div class="col">
    <img src="<%= book.image() %>">
  </div>
 </div>
@@ -27,12 +26,12 @@
   <tr>
     <td>
       <form method="get" action="/books/<%= book.id %>/edit">
-        <input class="btn" type="submit" value="Edit book details">
+        <input class="btn" type="submit" value="Edit '<%= book.title() %>'">
       </form>
     </td>
     <td>
       <form method="post" action="/books/<%= book.id %>/delete">
-        <input class="btn" type="submit" value="Remove book from inventory">
+        <input class="btn" type="submit" value="Remove '<%= book.title() %>' from inventory">
       </form>
     </td>
   </tr>

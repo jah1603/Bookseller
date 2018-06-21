@@ -16,7 +16,7 @@ class Book
     @retail_price = options['retail_price'].to_f.round(2)
     @url = options['url']
     @summary = options['summary']
-    @copies_sold = options['copies_sold']
+    @copies_sold = options['copies_sold'].to_i
   end
 
   def save()
@@ -45,7 +45,7 @@ class Book
     wholesale_price = '#{@wholesale_price}',
     retail_price = '#{@retail_price}',
     url = '#{@url}',
-    summary = '#{@summary}'
+    summary = '#{@summary}',
     copies_sold = '#{@copies_sold}'
     WHERE id = #{@id}"
     SqlRunner.run(sql)
@@ -121,7 +121,7 @@ end
 
 def image()
   if @url.empty?
-    image = "/images/no-book-image.jpg"
+    image = "/images/nocover.png"
   else
     image = @url
   end

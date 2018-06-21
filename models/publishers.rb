@@ -42,8 +42,7 @@ class Publisher
       $1, $2, $3, $4, $5, $6, $7, $8
     )
     WHERE id = $9"
-    values = [@title, @author, @publication_year, @quantity, @publisher_id, @genre_id, @wholesale_price, @retail_price, @url]
-    publisher_data = SqlRunner.run(sql, values)
+    SqlRunner.run(sql)
   end
 
   def self.delete_all()

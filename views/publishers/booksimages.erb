@@ -1,4 +1,4 @@
-<h1>Image-driven <%= @publishers.name %> book listing</h1>
+<h1>Complete listing of <%= @publishers.name %> books</h1>
 <% for book in @books %>
 <div class="row">
   <div class="col">
@@ -12,26 +12,25 @@
   <tr><td>Wholesale price: </td><td>£<%= book.wholesale_price %></td></tr>
   <tr><td>Retail price: </td><td>£<%= book.retail_price %></td></tr>
   <tr><td>Markup: </td><td><%= book.markup() %>%</td></tr>
+  <tr><td>Copies sold: </td><td><%= book.copies_sold() %></td></tr>
   <tr><td></td></tr>
   <tr><td></td></tr>
   </table>
   <tr><%= book.summary %></tr>
   </div>
-  <div class="col">
    <img src="<%= book.image() %>">
- </div>
 </div>
 <table class="center">
   <tr><td></td></tr>
   <tr>
     <td>
       <form method="get" action="/books/<%= book.id %>/edit">
-        <input class="btn" type="submit" value="Edit book details">
+        <input class="btn" type="submit" value="Edit '<%= book.title() %>'">
       </form>
     </td>
     <td>
       <form method="post" action="/books/<%= book.id %>/delete">
-        <input class="btn" type="submit" value="Remove book from inventory">
+        <input class="btn" type="submit" value="Remove '<%= book.title() %>' from inventory">
       </form>
     </td>
   </tr>

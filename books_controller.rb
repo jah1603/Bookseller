@@ -85,7 +85,6 @@ end
 #edit
 get '/publishers/:id/edit' do
   @publishers = Publisher.find(params['id'].to_i())
-  @publisherss = Publisher.all()
   erb(:"publishers/editchoose")
 end
 
@@ -114,17 +113,17 @@ get '/publishers/:id/images' do
   erb(:"publishers/booksimages")
 end
 
-#delete
-post '/publishers/:id/delete' do
-  publisher = Publisher.find(params['id'].to_i())
-  publisher.delete()
-  redirect to("/publishers")
-end
-
 #update
 post '/publishers/:id' do
   publisher = Publisher.new(params)
   publisher.update()
+  redirect to("/publishers")
+end
+
+#delete
+post '/publishers/:id/delete' do
+  publisher = Publisher.find(params['id'].to_i())
+  publisher.delete()
   redirect to("/publishers")
 end
 

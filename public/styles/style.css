@@ -37,6 +37,10 @@ body {
   vertical-align: middle
 }
 
+.img {
+  vertical-align: middle;
+}
+
 .btn {
   background-color: azure;
   border: 2px solid teal;

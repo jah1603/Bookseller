@@ -2,41 +2,40 @@
 
 <div class="boxes_big">
   <div class="boxes">
-
+<form method="post" action="/publishers/<%= @publishers.id%>">
     <table class="center">
-      <form method="post" action="/publishers/<%=@publishers.id%>">
           <td>
             <label for="publisher-name">Name: </label>
-              <input id="publisher-name" type="text" style="width: 250px;" name="name" value="<%=@publishers.name %>">
+              <input id="publisher-name" type="text" style="width: 225px;" name="name" value="<%=@publishers.name %>">
           </td>
           <td>
             <label for="publisher-address">Address: </label>
-              <input id="book-title" type="text" style="width: 250px;" name="address" value="<%=@publishers.address %>">
+              <input id="publisher-address" type="text" style="width: 250px;" name="address" value="<%=@publishers.address %>">
           </td>
           <td>
             <label for="publisher-city">City: </label>
-              <input id="book-title" type="text" style="width: 250px;" name="title" value="<%=@publishers.city %>">
+              <input id="publisher-city" type="text" style="width: 250px;" name="title" value="<%=@publishers.city %>">
           </td>
           <td>
             <label for="publisher-region">Region: </label>
-              <input id="book-title" type="text" style="width: 250px;" name="title" value="<%=@publishers.region %>">
+              <input id="publisher-region" type="text" style="width: 225px;" name="title" value="<%=@publishers.region %>">
           </td>
           <tr>
             <td>
               <label for="publisher-country">Country: </label>
-                <input id="book-title" type="text" style="width: 250px;" name="title" value="<%=@publishers.country %>">
+                <input id="publisher-country" type="text" style="width: 225px;" name="title" value="<%=@publishers.country %>">
             </td>
             <td>
               <label for="publisher-postcode">Postcode: </label>
-                <input id="book-title" type="text" style="width: 250px;" name="title" value="<%=@publishers.postcode %>">
+                <input id="publisher-postcode" type="text" style="width: 250px;" name="title" value="<%=@publishers.postcode %>">
             </td>
             <td>
               <label for="publisher-tel">Telephone: </label>
-                <input id="book-title" type="text" style="width: 250px;" name="title" value="<%=@publishers.tel %>">
+                <input id="publisher-tel" type="text" style="width: 250px;" name="title" value="<%=@publishers.tel %>">
             </td>
             <td>
               <label for="publisher-email">Email: </label>
-                <input id="book-title" type="text" style="width: 250px;" name="title" value="<%=@publishers.email %>">
+                <input id="publisher-email" type="text" style="width: 225px;" name="title" value="<%=@publishers.email %>">
             </td>
         </tr>
     </table>
@@ -44,7 +43,8 @@
 </div>
 <table class="center">
   <td>
+    <form method="post" action="/publishers/<%= @publishers.id%>">
     <input align="center" class="btn" type="submit" value="Store updated details">
-  </form>
   </td>
     </table>
+      </form>

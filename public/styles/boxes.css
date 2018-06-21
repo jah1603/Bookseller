@@ -21,11 +21,12 @@
 }
 
 .col {
+  display: center;
+  align-items: middle;
   flex: 1;
-
+  vertical-align: middle;
   padding: 1em;
   margin: 2px;
   border: 2px solid Teal;
   text-align: center;
-  vertical-align: center;
 }
