@@ -1,4 +1,4 @@
-<h1>Publishers stocked</h1>
+<h1><%= @genres.name %> publishers in stock</h1>
 <div class="row">
   <div class="col">
   <table class="center">
@@ -51,6 +51,11 @@
   </div>
 </div>
 <table class="center">
+  <td>
+    <form method="get" action="/genres">
+      <input class="btn" type="submit" value="Back to categories">
+    </form>
+  </td>
   <td>
     <form method="get" action="/publishers/new">
       <input class="btn" type="submit" value="Add a new publisher">

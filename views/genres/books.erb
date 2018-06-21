@@ -1,0 +1,57 @@
+<h1><%= @genres.name %> books in stock (click book title for details)</h1>
+<div class="boxes_big">
+  <div class="boxes">
+    <table class="center">
+      <tr>
+        <th>Title</th>
+        <th></th>
+        <th>Author</th>
+        <th></th>
+        <th>Publication year</th>
+        <th></th>
+        <th>Genre</th>
+        <th></th>
+        <th>Wholesale price</th>
+        <th></th>
+        <th>Retail price</th>
+        <th></th>
+        <th>Markup</th>
+        <th></th>
+        <th>Quantity</th>
+      </tr>
+      <% for book in @books %>
+      <tr>
+        <td><a href="/books/<%= book.id %>"><%= book.title  %></a></td>
+        <td>|</td>
+        <td><%= book.author  %></td>
+        <td>|</td>
+        <td><%= book.publication_year  %></td>
+        <td>|</td>
+        <td><%= book.genre %></td>
+        <td>|</td>
+        <td>£<%= book.wholesale_price %></td>
+        <td>|</td>
+        <td>£<%= book.retail_price %></td>
+        <td>|</td>
+        <td><%= book.markup %>%</td>
+        <td>|</td>
+        <td class="<%= book.color() %>"><%= book.quantity %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+<table class="center">
+  <tr>
+    <td>
+      <form method="get" action="/genres">
+        <input class="btn" type="submit" value="Back to categories">
+      </form>
+    </td>
+    <td>
+      <form method="get" action="/genres/<%= @genres.id %>/images">
+        <input class="btn" type="submit" value="Browse books by image">
+      </form>
+    </td>
+  </tr>
+</table>

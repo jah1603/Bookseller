@@ -118,7 +118,7 @@ book1 = Book.new({
   "url" => "/images/Two_cities.jpg",
   "summary" => "Charles Dickens's A Tale of Two Cities portrays a world on fire, split between Paris and London during the brutal and bloody events of the French Revolution. This Penguin Classics edition of is edited with an introduction and notes by Richard Maxwell.
 'It was the best of times, it was the worst of times...'
-After eighteen years as a political prisoner in the Bastille the aging Dr Manette is finally released and reunited with his daughter in England. There, two very different men, Charles Darnay, an exiled French aristocrat, and Sydney Carton, a disreputable but brilliant English lawyer, become enmeshed through their love for Lucie Manette. From the tranquil lanes of London, they are all drawn against their will to the vengeful, bloodstained streets of Paris at the height of the Reign of Terror and soon fall under the lethal shadow of La Guillotine.".
+After eighteen years as a political prisoner in the Bastille the aging Dr Manette is finally released and reunited with his daughter in England. There, two very different men, Charles Darnay, an exiled French aristocrat, and Sydney Carton, a disreputable but brilliant English lawyer, become enmeshed through their love for Lucie Manette. From the tranquil lanes of London, they are all drawn against their will to the vengeful, bloodstained streets of Paris at the height of the Reign of Terror and soon fall under the lethal shadow of La Guillotine."
   })
 book1.save()
 

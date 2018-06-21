@@ -9,10 +9,16 @@
         <td><%= genre.name  %>
           <table class="center">
             <tr><td>
-                <form method="get" action="/books/new">
+              <td>
+                <form method="get" action="/genres/<%= genre.id %>/books">
                   <input class="btn" type="submit" value="Browse <%= genre.name  %> books">
-                  <form method="get" action="/books/new">
+                  </form>
+                </td>
+                <td>
+                  <form method="get" action="/genres/<%= genre.id %>/publishers">
                     <input class="btn" type="submit" value="View <%= genre.name  %> publishers">
+                    </form>
+                  </td>
                 <tr><td>
                 </form>
               </table>

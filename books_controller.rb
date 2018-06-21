@@ -78,8 +78,9 @@ get '/publishers/new' do
 end
 
 #edit
-get '/publishers/edit' do
-  @publishers = Publisher.all()
+get '/publishers/:id/edit' do
+  @publishers = Publisher.find(params['id'].to_i())
+  @publisherss = Publisher.all()
   erb(:"publishers/editchoose")
 end
 
@@ -126,4 +127,22 @@ end
 get '/genres' do
   @genres = Genre.all()
   erb(:"genres/index")
+end
+
+get '/genres/:id/books' do
+  @genres = Genre.find(params['id'].to_i())
+  @books = @genres.book()
+  erb(:"genres/books")
+end
+
+get '/genres/:id/publishers' do
+  @genres = Genre.find(params['id'].to_i())
+  @publishers = @genres.publisher()
+  erb(:"genres/publishers")
+end
+
+get '/genres/:id/images' do
+  @genres = Genre.find(params['id'].to_i())
+  @books = @genres.book()
+  erb(:"genres/booksimages")
 end
