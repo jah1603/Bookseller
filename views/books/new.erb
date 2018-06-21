@@ -1,76 +1,85 @@
-<h1>Please enter the following details to add a new book to the inventory.</h1>
+<h1>Complete the fields to add a new book to the inventory.</h1>
 
 <div class="boxes_big">
   <div class="boxes">
-
     <table class="center">
       <form method="post" action="/books">
-        <tr>
+        <td>
+          <label for="book-title">Title: </label>
+          <input id="book-title" type="text" style="width: 200px;" name="title" value="">
+        </td>
+        <td>
+          <label for="book-author">Author: </label>
+          <input id="book-author" type="text" style="width: 100px;" name="author" value="">
+        </td>
+        <td>
+          <label for="book-publication">Publication year: </label>
+          <input id="book-publication" type="text" style="width: 50px;" name="publication_year" value="">
+        </td>
+        <td>
+          <label for="book-quantity">Quantity: </label>
+          <input id="book-quantity" type="number" min="0" style="width: 50px;" name="quantity" value="">
+        </td>
+<tr>
+    <table class="center">
           <td>
-            <label for="book-title">Title: </label>
-            <input id="book-title" type="text" style="width: 250px;" name="title">
+          <label for="select-genre">Select genre: </label>
+          <select id="select-genre" name="genre_id" style="width": 75px>
+            <% for genre in @genres %>
+            <option value = "<%= genre.id %>"><%= genre.name %> <%= "selected" if genre == genre.name%></option>
+            <% end %>
+          </select>
           </td>
           <td>
-            <label for="book-author">Author: </label>
-            <input list="authors" name="authors" style="width: 150px;">
-              <datalist id="authors">
-                <% for book in @books %>
-                <option value="<%= book.author %>"></option>
-                <% end %>
-              </datalist>
-          </td>
+            <label for="select-publisher">Select publisher: </label>
+            <select id="select-publisher" name="publisher_id">
+              <% for publisher in @publishers %>
+              <option value = "<%= publisher.id %>"><%= publisher.name %></option>
+              <% end %>
+            </select>
+            </td>
           <td>
-            <label for="book-year">Publication year: </label>
-            <input id="book-year" type="text" style="width: 100px;" name="publication_year">
-          </td>
-          <td>
-            <label for="publisher-name">Publisher: </label>
-            <input list="names" name="names" style="width: 150px;">
-              <datalist id="names">
-                <% for publisher in @publishers %>
-                <option value="<%= publisher.name %>"></option>
-                <% end %>
-              </datalist>
-          </td>
-          <td>
-            <label for="genre-name">Genre: </label>
-            <input list="genres" name="genres" style="width: 150px;">
-              <datalist id="genres">
-                <% for genre in @genres %>
-                <option value="<%= genre.name %>"></option>
-                <% end %>
-              </datalist>
-          </td>
-        </tr>
-        <tr>
-          <td>
-              <label for="book-quantity">Quantity: </label>
-              <input id="book-quantity" type="number" min="0" style="width: 75px;" name="quantity">
-          </td>
-          <td>
-            <label for="book-cost_price">Wholesale price: £</label>
-            <input id="book-cost_price" type="number" step="0.01" min="0" style="width: 50px;" name="wholesale_price">
+            <label for="book-wholesale_price">Wholesale price: £</label>
+            <input id="book-wholesale_price" type="number" step="0.01" min="0" style="width: 50px;" name="wholesale_price" value="">
           </td>
           <td>
             <label for="book-retail_price">Retail price: £</label>
-            <input id="book-retail_price" type="number" step="0.01" min="0" style="width: 50px;" name="retail_price">
+            <input id="book-retail_price" type="number" step="0.01" min="0" style="width: 50px;" name="retail_price" value="">
           </td>
+        </table>
         </tr>
         <tr>
+          <table class="center">
           <td>
             <label for="book-url">Image: </label>
-            <input id="book-url" type="text" style="width: 250px;" name="url">
+            <input id="book-url" type="text" style="width: 200px;" name="url" value="">
           </td>
+
           <td>
             <label for="book-summary">Summary: </label>
-            <input id="book-summary" type="text" style="width: 250px;" name="summary">
+            <input id="book-summary" type="text" style="width: 180px;" name="summary" value="">
           </td>
           <td>
-            <form method="post" action="/books">
-            <input class="btn" type="submit" value="Add book">
+            <label for="book-copies_sold">Copies sold: </label>
+            <input id="book-copies_sold" type="number" min="0" style="width: 50px;" name="copies_sold" value="">
           </td>
+        </table>
         </tr>
-      </form>
-    </table>
-  </div>
-</div>
+        </table>
+      </div>
+    </div>
+    <table class="center">
+      <tr>
+        <form method="post" action="/books">
+          <td>
+            <input class="btn" type="submit" value="Save book to inventory">
+          </td>
+          </form>
+          <td>
+            <form method="get" action="/publishers/newbook">
+              <input class="btn" type="submit" value="Publisher not listed? Click here to add it">
+            </form>
+          </td>
+          </tr>
+      </table>
+      </tr>

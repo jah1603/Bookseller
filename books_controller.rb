@@ -83,6 +83,11 @@ get '/publishers/new' do
   erb(:"publishers/new")
 end
 
+get '/publishers/newbook' do
+  @publisherss = Publisher.all()
+  erb(:"publishers/newbook")
+end
+
 #edit
 get '/publishers/:id/edit' do
   @publishers = Publisher.find(params['id'].to_i())
@@ -101,6 +106,12 @@ post '/publishers' do
   publisher = Publisher.new(params)
   publisher.save()
   redirect to ("/publishers")
+end
+
+post '/publishers/newbook' do
+  publisher = Publisher.new(params)
+  publisher.save()
+  redirect to ("/books/new")
 end
 
 get '/publishers/:id/books' do
