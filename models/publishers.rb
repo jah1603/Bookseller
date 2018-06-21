@@ -33,15 +33,16 @@ class Publisher
   end
 
   def update()
-    sql = "UPDATE publishers
-    SET
-    (
-      name, address, city, region, country, postcode, tel, email
-    ) =
-    (
-      $1, $2, $3, $4, $5, $6, $7, $8
-    )
-    WHERE id = $9"
+    sql = "UPDATE publishers SET
+    name = '#{@name}',
+    address = '#{@address}',
+    city = '#{@city}',
+    region = '#{@region}',
+    country = '#{@country}',
+    postcode = '#{@postcode}',
+    tel = '#{@tel}',
+    email = '#{@email}'
+    WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 

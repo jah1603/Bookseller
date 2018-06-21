@@ -12,6 +12,7 @@
   <tr><td>Wholesale price: </td><td>£<%= @books.wholesale_price %></td></tr>
   <tr><td>Retail price: </td><td>£<%= @books.retail_price %></td></tr>
   <tr><td>Markup: </td><td><%= @books.markup() %>%</td></tr>
+    <tr><td>Copies sold: </td><td><%= @books.copies_sold() %></td></tr>
   <tr><td></td></tr>
   <tr><td></td></tr>
   </table>
@@ -31,7 +32,7 @@
     </td>
     <td>
       <form method="get" action="/books/<%= @books.id %>/edit">
-        <input class="btn" type="submit" value="Edit book details">
+        <input class="btn" type="submit" value="Edit '<%= @books.title %>'">
       </form>
     </td>
     <td>

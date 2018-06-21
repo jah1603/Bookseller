@@ -79,12 +79,14 @@ end
 
 #new
 get '/publishers/new' do
+  @publisherss = Publisher.all()
   erb(:"publishers/new")
 end
 
 #edit
 get '/publishers/:id/edit' do
   @publishers = Publisher.find(params['id'].to_i())
+  @publisherss = Publisher.all()
   erb(:"publishers/editchoose")
 end
 
