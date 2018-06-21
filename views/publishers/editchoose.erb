@@ -7,75 +7,36 @@
       <form method="post" action="/publishers/<%=@publishers.id%>">
           <td>
             <label for="publisher-name">Name: </label>
-            <select id="select-publisher" name="publisher_id">
-              <% for publisher in @publisherss %>
-              <option value = "<%= publisher.id %>"><%= publisher.name %></option>
-              <% end %>
-            </select>
+              <input id="publisher-name" type="text" style="width: 250px;" name="name" value="<%=@publishers.name %>">
           </td>
           <td>
             <label for="publisher-address">Address: </label>
-            <input list="addresses" name="addresses" style="width: 150px;">
-              <datalist id="addresses">
-                <% for publisher in @publisherss %>
-                <option value="<%= publisher.address %>"><%= publisher.name %></option>
-                <% end %>
-              </datalist>
+              <input id="book-title" type="text" style="width: 250px;" name="address" value="<%=@publishers.address %>">
           </td>
           <td>
             <label for="publisher-city">City: </label>
-            <input list="cities" name="cities" style="width: 150px;">
-              <datalist id="cities">
-                <% for publisher in @publisherss %>
-                <option value="<%= publisher.city %>"><%= publisher.name %></option>
-                <% end %>
-              </datalist>
+              <input id="book-title" type="text" style="width: 250px;" name="title" value="<%=@publishers.city %>">
           </td>
           <td>
             <label for="publisher-region">Region: </label>
-            <input list="regions" name="regions" style="width: 150px;">
-              <datalist id="regions">
-                <% for publisher in @publisherss %>
-                <option value="<%= publisher.region %>"><%= publisher.name %></option>
-                <% end %>
-              </datalist>
+              <input id="book-title" type="text" style="width: 250px;" name="title" value="<%=@publishers.region %>">
           </td>
-          <tr align = >
+          <tr>
             <td>
               <label for="publisher-country">Country: </label>
-              <input list="countries" name="countries" style="width: 150px;">
-                <datalist id="countries">
-                  <% for publisher in @publisherss %>
-                  <option value="<%= publisher.country %>"><%= publisher.name %></option>
-                  <% end %>
-                </datalist>
+                <input id="book-title" type="text" style="width: 250px;" name="title" value="<%=@publishers.country %>">
             </td>
             <td>
               <label for="publisher-postcode">Postcode: </label>
-              <input list="postcodes" name="postcodes" style="width: 150px;">
-                <datalist id="postcodes">
-                  <% for publisher in @publisherss %>
-                  <option value="<%= publisher.postcode %>"><%= publisher.name %></option>
-                  <% end %>
-                </datalist>
+                <input id="book-title" type="text" style="width: 250px;" name="title" value="<%=@publishers.postcode %>">
             </td>
             <td>
-              <label for="publisher-telephone">Telephone: </label>
-              <input list="telephones" name="telephones" style="width: 150px;">
-                <datalist id="telephones">
-                  <% for publisher in @publisherss %>
-                  <option value="<%= publisher.tel %>"><%= publisher.name %></option>
-                  <% end %>
-                </datalist>
+              <label for="publisher-tel">Telephone: </label>
+                <input id="book-title" type="text" style="width: 250px;" name="title" value="<%=@publishers.tel %>">
             </td>
             <td>
               <label for="publisher-email">Email: </label>
-              <input list="emails" name="emails" style="width: 150px;">
-                <datalist id="emails">
-                  <% for publisher in @publisherss %>
-                  <option value="<%= publisher.email %>"><%= publisher.name %></option>
-                  <% end %>
-                </datalist>
+                <input id="book-title" type="text" style="width: 250px;" name="title" value="<%=@publishers.email %>">
             </td>
         </tr>
     </table>

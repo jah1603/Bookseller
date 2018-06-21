@@ -25,11 +25,6 @@
   <tr><td></td></tr>
   <tr>
     <td>
-      <form method="get" action="/books">
-        <input class="btn" type="submit" value="Back to books">
-      </form>
-    </td>
-    <td>
       <form method="get" action="/books/<%= book.id %>/edit">
         <input class="btn" type="submit" value="Edit book details">
       </form>
@@ -44,3 +39,8 @@
   <tr><td></td></tr>
 </table>
 <% end %>
+<td>
+  <form method="get" action="/books">
+    <input class="btn" type="submit" value="Back to books">
+  </form>
+</td>

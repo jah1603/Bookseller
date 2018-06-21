@@ -20,6 +20,8 @@
         <th>Markup</th>
         <th></th>
         <th>Quantity</th>
+        <th></th>
+        <th>Copies sold</th>
       </tr>
       <% for book in @books %>
       <tr>
@@ -40,6 +42,8 @@
         <td><%= book.markup %>%</td>
         <td>|</td>
         <td class="<%= book.color() %>"><%= book.quantity %></td>
+        <td>|</td>
+        <td><%= book.copies_sold %></td>
       </tr>
       <% end %>
     </table>
@@ -58,8 +62,8 @@
       </form>
     </td>
     <td>
-      <form method="post" action="/books/images">
-        <input class="btn" type="submit" value="Browse books by image">
+      <form method="post" action="/books/imageslow">
+        <input class="btn" type="submit" value="View low stock books">
       </form>
     </td>
   </tr>

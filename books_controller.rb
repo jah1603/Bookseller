@@ -19,8 +19,13 @@ get '/' do
 end
 
 get '/books/images' do
-  @books = Book.all_low()
+  @books = Book.all
   erb(:"books/indeximages")
+end
+
+get '/books/imageslow' do
+  @books = Book.all_low()
+  erb(:"books/indeximageslow")
 end
 
 #new

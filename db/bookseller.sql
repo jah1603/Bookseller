@@ -30,5 +30,6 @@ CREATE TABLE books(
   wholesale_price DECIMAL(8, 3),
   retail_price DECIMAL(8, 3),
   url VARCHAR(255),
-  summary VARCHAR(8000)
+  summary VARCHAR(8000),
+  copies_sold INT8
 );
