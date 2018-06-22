@@ -1,0 +1,85 @@
+<h1>Complete the fields to add a new book to the inventory.</h1>
+
+<div class="boxes_big">
+  <div class="boxes">
+    <table class="center">
+      <form method="post" action="/books">
+        <td>
+          <label for="book-title">Title: </label>
+          <input id="book-title" type="text" style="width: 200px;" name="title" value="">
+        </td>
+        <td>
+          <label for="book-author">Author: </label>
+          <input id="book-author" type="text" style="width: 100px;" name="author" value="">
+        </td>
+        <td>
+          <label for="book-publication">Publication year: </label>
+          <input id="book-publication" type="text" style="width: 50px;" name="publication_year" value="">
+        </td>
+        <td>
+          <label for="book-quantity">Quantity: </label>
+          <input id="book-quantity" type="number" min="0" style="width: 50px;" name="quantity" value="">
+        </td>
+<tr>
+    <table class="center">
+          <td>
+          <label for="select-genre">Select genre: </label>
+          <select id="select-genre" name="genre_id" style="width": 75px>
+            <% for genre in @genres %>
+            <option value = "<%= genre.id %>"><%= genre.name %> <%= "selected" if genre == genre.name%></option>
+            <% end %>
+          </select>
+          </td>
+          <td>
+            <label for="select-publisher">Select publisher: </label>
+            <select id="select-publisher" name="publisher_id">
+              <% for publisher in @publishers %>
+              <option value = "<%= publisher.id %>"><%= publisher.name %></option>
+              <% end %>
+            </select>
+            </td>
+          <td>
+            <label for="book-wholesale_price">Wholesale price: £</label>
+            <input id="book-wholesale_price" type="number" step="0.01" min="0" style="width: 50px;" name="wholesale_price" value="">
+          </td>
+          <td>
+            <label for="book-retail_price">Retail price: £</label>
+            <input id="book-retail_price" type="number" step="0.01" min="0" style="width: 50px;" name="retail_price" value="">
+          </td>
+        </table>
+        </tr>
+        <tr>
+          <table class="center">
+          <td>
+            <label for="book-url">Image: </label>
+            <input id="book-url" type="text" style="width: 200px;" name="url" value="">
+          </td>
+
+          <td>
+            <label for="book-summary">Summary: </label>
+            <input id="book-summary" type="text" style="width: 180px;" name="summary" value="">
+          </td>
+          <td>
+            <label for="book-copies_sold">Copies sold: </label>
+            <input id="book-copies_sold" type="number" min="0" style="width: 50px;" name="copies_sold" value="">
+          </td>
+        </table>
+        </tr>
+        </table>
+      </div>
+    </div>
+    <table class="center">
+      <tr>
+        <form method="post" action="/books">
+          <td>
+            <input class="btn" type="submit" value="Save book to inventory">
+          </td>
+          </form>
+          <td>
+            <form method="get" action="/publishers/newbook">
+              <input class="btn" type="submit" value="Publisher not listed? Click here to add it">
+            </form>
+          </td>
+          </tr>
+      </table>
+      </tr>

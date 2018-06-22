@@ -37,9 +37,9 @@ get '/books/new' do
   erb(:"books/new")
 end
 
-get 'books/newsale' do
+get 'books/logsale' do
   @books = Book.all()
-  erb(:"books/sale")
+  erb(:"books/logsale")
 end
 
 #edit
@@ -68,6 +68,15 @@ post '/books/:id' do
   book = Book.new(params)
   book.update()
   redirect to("/books/#{params["id"]}")
+end
+
+#sale
+post '/books/:id/sale' do
+  bookk = Book.find(params['id'].to_i())
+  bookk.sale
+  bookk.units_up()
+  bookk.update()
+  redirect to("/books/index")
 end
 
 #delete

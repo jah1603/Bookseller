@@ -151,7 +151,7 @@ book3 = Book.new({
   "url" => "/images/lord_of_the_flies.jpeg",
   "summary" => "A plane crashes on an uninhabited island and the only survivors, a group of schoolboys, assemble on the beach and wait to be rescued. By day they inhabit a land of bright fantastic birds and dark blue seas, but at night their dreams are haunted by the image of a terrifying beast.
 
-In this, his first novel, William Golding gave the traditional adventure story an ironic, devastating twist. The boys' delicate sense of order fades, and their childish fears are transformed into something deeper and more primitive. Their games take on a horrible significance, and before long the well-behaved party of schoolboys has turned into a tribe of faceless, murderous savages.",
+In this, his first novel, William Golding gave the traditional adventure story an ironic, devastating twist. The boys'' delicate sense of order fades, and their childish fears are transformed into something deeper and more primitive. Their games take on a horrible significance, and before long the well-behaved party of schoolboys has turned into a tribe of faceless, murderous savages.",
 "copies_sold" => 6
   })
 book3.save()

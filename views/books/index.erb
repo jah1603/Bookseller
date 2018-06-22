@@ -9,8 +9,6 @@
         <th></th>
         <th>Publisher</th>
         <th></th>
-        <th>Publication year</th>
-        <th></th>
         <th>Genre</th>
         <th></th>
         <th>Wholesale price</th>
@@ -31,8 +29,6 @@
         <td>|</td>
         <td><%= book.publisher %></td>
         <td>|</td>
-        <td><%= book.publication_year  %></td>
-        <td>|</td>
         <td><%= book.genre %></td>
         <td>|</td>
         <td>£<%= book.wholesale_price %></td>
@@ -44,6 +40,12 @@
         <td class="<%= book.color() %>"><%= book.quantity %></td>
         <td>|</td>
         <td><%= book.copies_sold %></td>
+        <td>|</td>
+          <td>
+            <form method="post" action="/books/<%= book.id() %>/sale">
+              <input class="btn" type="submit" value="Sell a copy">
+            </form>
+          </td>
       </tr>
       <% end %>
     </table>
@@ -57,7 +59,7 @@
       </form>
     </td>
     <td>
-      <form method="get" action="/books/newsale">
+      <form method="get" action="/books/logsale">
         <input class="btn" type="submit" value="Log a new sale">
       </form>
     </td>
