@@ -17,12 +17,10 @@
   <tr><td></td></tr>
   </table>
   <tr><%= @books.summary %></tr>
-  </div>
-  <div class="col">
-   <img src="<%= @books.image() %>">
- </div>
 </div>
-
+  <img src="<%= @books.image() %>" vertical-align="middle">
+</div>
+<p></p>
 <table class="center">
   <tr>
     <td>
@@ -33,6 +31,11 @@
     <td>
       <form method="get" action="/books/<%= @books.id %>/edit">
         <input class="btn" type="submit" value="Edit '<%= @books.title %>'">
+      </form>
+    </td>
+    <td>
+      <form method="post" action="/books/<%= @books.id() %>/salefive">
+        <input class="btn" type="submit" value="Replenish stock of '<%= @books.title() %>' ">
       </form>
     </td>
     <td>

@@ -202,4 +202,9 @@ def units_up()
   return @copies_sold
 end
 
+def replenish()
+  @quantity += 1 if @quantity < 100
+    return @quantity
+end
+
 end

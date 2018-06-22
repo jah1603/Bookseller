@@ -29,6 +29,11 @@
       </form>
     </td>
     <td>
+      <form method="post" action="/books/<%= book.id %>/salefour">
+        <input class="btn" type="submit" value="Replenish stock">
+      </form>
+    </td>
+    <td>
       <form method="post" action="/books/<%= book.id %>/delete">
         <input class="btn" type="submit" value="Remove '<%= book.title() %>' from inventory">
       </form>
