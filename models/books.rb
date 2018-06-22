@@ -189,7 +189,17 @@ return Book.find(ids[title_min_profit_index])
 end
 
 def profit
-  @copies_sold*((@retail_price.to_i)-(@wholesale_price.to_i))
+  return '%.2f' % (@copies_sold*((@retail_price.to_f.round(2))-(@wholesale_price.to_f.round(2)))).to_f.round(2)
+end
+
+def sale()
+  @quantity -= 1 if @quantity != 0
+    return @quantity
+end
+
+def units_up()
+  @copies_sold += 1 if @quantity != 0
+  return @copies_sold
 end
 
 end

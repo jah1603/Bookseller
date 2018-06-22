@@ -37,6 +37,11 @@ get '/books/new' do
   erb(:"books/new")
 end
 
+get 'books/newsale' do
+  @books = Book.all()
+  erb(:"books/sale")
+end
+
 #edit
 get '/books/:id/edit' do
   @books = Book.find(params['id'].to_i())

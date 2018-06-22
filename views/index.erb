@@ -8,7 +8,32 @@
 </table>
   <br></br>
   <table class="center">
-<tr><td><text>This service also offers an image-driven book search for your browsing convenience. </text></tr>
+<tr><td><text>This service also offers an image-aided book search for your browsing convenience. </text></tr>
+</table>
+<p></p>
+<table class="center">
+  <tr>
+    <td>
+      <form method="get" action="/books/new">
+        <input class="btn" type="submit" value="Log a new book">
+      </form>
+    </td>
+    <td>
+      <form method="get" action="/publishers/new">
+        <input class="btn" type="submit" value="Log a new publisher">
+      </form>
+    </td>
+    <td>
+      <form method="get" action="/books/newsale">
+        <input class="btn" type="submit" value="Log a new sale">
+      </form>
+    </td>
+    <td>
+      <form method="get" action="/books/images">
+        <input class="btn" type="submit" value="Image-aided book search">
+      </form>
+    </td>
+  </tr>
 </table>
 <br></br>
 <h4>Below you will find an overview of the best- and worst-performing books with regard to profitability and units sold.</h4>
@@ -60,7 +85,7 @@
  </div>
 </div>
 <br></br>
-<h1>Most profitable book (£<%= Book.mostprofit.profit() %> generated)</h1>
+<h1>Most profitable book (£<%= Book.mostprofit.profit() %> profit generated)</h1>
 <div class="row">
   <div class="col">
   <table class="center">
@@ -84,7 +109,7 @@
 </div>
 
 <br></br>
-<h1>Least profitable book (£<%= Book.leastprofit.profit() %> generated)</h1>
+<h1>Least profitable book (£<%= Book.leastprofit.profit() %> profit generated)</h1>
 <div class="row">
   <div class="col">
   <table class="center">
@@ -130,3 +155,11 @@
     <th></th>
   </div>
 </div>
+<br></br>
+<tr>
+<td>
+  <form method="get" action="/">
+    <input class="btn" type="submit" value="Back to top">
+  </form>
+</td>
+</tr>
