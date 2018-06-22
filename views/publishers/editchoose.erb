@@ -47,6 +47,11 @@
 <form method="post" action="/publishers/<%= @publishers.id%>">
   <input align="center" class="btn" type="submit" value="Save publisher">
 </td>
-</tr>
     </form>
+    <td align="center">
+    <form method="post" action="/publishers/<%= @publishers.id%>/delete">
+      <input align="center" class="btn" type="submit" value="Remove <%= @publishers.name%> and all its books">
+    </form>
+    </td>
+  </tr>
   </table>

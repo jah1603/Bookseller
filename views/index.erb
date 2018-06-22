@@ -1,15 +1,119 @@
-<h1>Literary Treasures</h1>
+<h2 align="center">Agatha's Literary Treasures</h2>
+  <table class="center">
+<tr><td><text>This is a digital tool which monitors stock levels and stores information on books, publishers and book categories.</text></tr>
+  </table>
+  <br></br>
+    <table class="center">
+<tr><td><text>You can add, edit and delete books and publishers as desired, but be aware that deleting a publisher will also remove all the books printed by that publisher.</text></tr>
+</table>
+  <br></br>
+  <table class="center">
+<tr><td><text>This service also offers an image-driven book search for your browsing convenience. </text></tr>
+</table>
+<br></br>
+<h4>Below you will find an overview of the best- and worst-performing books with regard to profitability and units sold.</h4>
+<br></br>
+<h1>Current bestseller (<%= Book.bestseller.copies_sold() %> units sold)</h1>
 
 <div class="row">
-
-<img src=".../images/real_logo.png" width="200" height="80" alt="">
-
   <div class="col">
-    <h2>Falling stock</h2>
+  <table class="center">
+  <tr><td>Title: </td><td><%= Book.bestseller.title %></td></tr>
+  <tr><td>Publisher: </td><td><%= Book.bestseller.publisher %></td></tr>
+  <tr><td>Publication year: </td><td><%= Book.bestseller.publication_year %></td></tr>
+  <tr><td>Author: </td><td><%= Book.bestseller.author %></td></tr>
+  <tr><td>Genre: </td><td><%= Book.bestseller.genre %></td></tr>
+  <tr><td>Quantity: </td><td class="<%= Book.bestseller.color() %>"><%= Book.bestseller.quantity %></td></tr>
+  <tr><td>Wholesale price: </td><td>£<%= Book.bestseller.wholesale_price %></td></tr>
+  <tr><td>Retail price: </td><td>£<%= Book.bestseller.retail_price %></td></tr>
+  <tr><td>Markup: </td><td><%= Book.bestseller.markup() %>%</td></tr>
+  <tr><td>Copies sold: </td><td><%= Book.bestseller.copies_sold() %></td></tr>
+  <tr><td></td></tr>
+  <tr><td></td></tr>
+  </table>
+  <tr><%= Book.bestseller.summary %></tr>
+  </div>
+   <img src="<%= Book.bestseller.image() %>">
+ </div>
+</div>
+<br></br>
+<h1>Worst-performing book (<%= Book.worstseller.copies_sold() %> units sold)</h1>
+<div class="row">
+  <div class="col">
+  <table class="center">
+  <tr><td>Title: </td><td><%= Book.worstseller.title %></td></tr>
+  <tr><td>Publisher: </td><td><%= Book.worstseller.publisher %></td></tr>
+  <tr><td>Publication year: </td><td><%= Book.worstseller.publication_year %></td></tr>
+  <tr><td>Author: </td><td><%= Book.worstseller.author %></td></tr>
+  <tr><td>Genre: </td><td><%= Book.worstseller.genre %></td></tr>
+  <tr><td>Quantity: </td><td class="<%= Book.worstseller.color() %>"><%= Book.worstseller.quantity %></td></tr>
+  <tr><td>Wholesale price: </td><td>£<%= Book.worstseller.wholesale_price %></td></tr>
+  <tr><td>Retail price: </td><td>£<%= Book.worstseller.retail_price %></td></tr>
+  <tr><td>Markup: </td><td><%= Book.worstseller.markup() %>%</td></tr>
+  <tr><td>Copies sold: </td><td><%= Book.worstseller.copies_sold() %></td></tr>
+  <tr><td></td></tr>
+  <tr><td></td></tr>
+  </table>
+  <tr><%= Book.worstseller.summary %></tr>
+  </div>
+   <img src="<%= Book.worstseller.image() %>">
+ </div>
+</div>
+<br></br>
+<h1>Most profitable book (£<%= Book.mostprofit.profit() %> generated)</h1>
+<div class="row">
+  <div class="col">
+  <table class="center">
+  <tr><td>Title: </td><td><%= Book.mostprofit.title %></td></tr>
+  <tr><td>Publisher: </td><td><%= Book.mostprofit.publisher %></td></tr>
+  <tr><td>Publication year: </td><td><%= Book.mostprofit.publication_year %></td></tr>
+  <tr><td>Author: </td><td><%= Book.mostprofit.author %></td></tr>
+  <tr><td>Genre: </td><td><%= Book.mostprofit.genre %></td></tr>
+  <tr><td>Quantity: </td><td class="<%= Book.mostprofit.color() %>"><%= Book.mostprofit.quantity %></td></tr>
+  <tr><td>Wholesale price: </td><td>£<%= Book.mostprofit.wholesale_price %></td></tr>
+  <tr><td>Retail price: </td><td>£<%= Book.mostprofit.retail_price %></td></tr>
+  <tr><td>Markup: </td><td><%= Book.mostprofit.markup() %>%</td></tr>
+  <tr><td>Copies sold: </td><td><%= Book.mostprofit.copies_sold() %></td></tr>
+  <tr><td></td></tr>
+  <tr><td></td></tr>
+  </table>
+  <tr><%= Book.mostprofit.summary %></tr>
+  </div>
+   <img src="<%= Book.mostprofit.image() %>">
+ </div>
+</div>
 
-    <table class="center">
+<br></br>
+<h1>Least profitable book (£<%= Book.leastprofit.profit() %> generated)</h1>
+<div class="row">
+  <div class="col">
+  <table class="center">
+  <tr><td>Title: </td><td><%= Book.leastprofit.title %></td></tr>
+  <tr><td>Publisher: </td><td><%= Book.leastprofit.publisher %></td></tr>
+  <tr><td>Publication year: </td><td><%= Book.leastprofit.publication_year %></td></tr>
+  <tr><td>Author: </td><td><%= Book.leastprofit.author %></td></tr>
+  <tr><td>Genre: </td><td><%= Book.leastprofit.genre %></td></tr>
+  <tr><td>Quantity: </td><td class="<%= Book.leastprofit.color() %>"><%= Book.leastprofit.quantity %></td></tr>
+  <tr><td>Wholesale price: </td><td>£<%= Book.leastprofit.wholesale_price %></td></tr>
+  <tr><td>Retail price: </td><td>£<%= Book.leastprofit.retail_price %></td></tr>
+  <tr><td>Markup: </td><td><%= Book.leastprofit.markup() %>%</td></tr>
+  <tr><td>Copies sold: </td><td><%= Book.leastprofit.copies_sold() %></td></tr>
+  <tr><td></td></tr>
+  <tr><td></td></tr>
+  </table>
+  <tr><%= Book.leastprofit.summary %></tr>
+  </div>
+   <img src="<%= Book.leastprofit.image() %>">
+ </div>
+</div>
+<br></br>
+<h1>Falling stock levels</h1>
+<div class="row">
+  <div class="col">
+  <table class="center">
       <tr>
-        <th>Book</th>
+        <h5>Renewal advised</h5>
+        <th>Title</th>
         <th></th>
         <th>Quantity</th>
       </tr>
@@ -21,5 +125,8 @@
       </tr>
       <% end %>
     </table>
+    <th></th>
+    <th></th>
+    <th></th>
   </div>
 </div>

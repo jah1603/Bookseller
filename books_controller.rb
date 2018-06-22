@@ -14,6 +14,7 @@ end
 
 #main index
 get '/' do
+  bestsellerr = Book.bestseller()
   @books = Book.all_low()
   erb(:index)
 end

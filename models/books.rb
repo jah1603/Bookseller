@@ -136,4 +136,60 @@ def retail_price
   return '%.2f' % @retail_price
 end
 
+def self.bestseller
+  copies = []
+  for book in Book.all()
+    copies.push(book.copies_sold)
+  end
+  ids = []
+  for book in Book.all()
+    ids.push(book.id)
+  end
+  title_max_copy_index = copies.index(copies.max)
+return Book.find(ids[title_max_copy_index])
+end
+
+def self.worstseller
+  copies = []
+  for book in Book.all()
+    copies.push(book.copies_sold)
+  end
+  ids = []
+  for book in Book.all()
+    ids.push(book.id)
+  end
+  title_min_copy_index = copies.index(copies.min)
+return Book.find(ids[title_min_copy_index])
+end
+
+def self.mostprofit
+  profits = []
+  for book in Book.all()
+    profits.push(book.quantity*((book.retail_price.to_i)-(book.wholesale_price.to_i)))
+  end
+  ids = []
+  for book in Book.all()
+    ids.push(book.id)
+  end
+  title_max_profit_index = profits.index(profits.max)
+return Book.find(ids[title_max_profit_index])
+end
+
+def self.leastprofit
+  profits = []
+  for book in Book.all()
+    profits.push(book.copies_sold*((book.retail_price.to_i)-(book.wholesale_price.to_i)))
+  end
+  ids = []
+  for book in Book.all()
+    ids.push(book.id)
+  end
+  title_min_profit_index = profits.index(profits.min)
+return Book.find(ids[title_min_profit_index])
+end
+
+def profit
+  @copies_sold*((@retail_price.to_i)-(@wholesale_price.to_i))
+end
+
 end

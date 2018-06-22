@@ -51,6 +51,11 @@ class Publisher
     SqlRunner.run(sql)
   end
 
+  def delete()
+    sql = "DELETE FROM publishers WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
   def self.all()
     sql = "SELECT * FROM publishers"
     publishers = SqlRunner.run( sql )

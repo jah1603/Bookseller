@@ -90,10 +90,52 @@ h1 {
 
 }
 
+h2 {
+  text-align: center;
+  font-family: 'Times New Roman', sans-serif;
+  font-size: 24px;
+  color: #005f6b;
+
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Times New Roman', sans-serif;
+  font-size: 19px;
+  color: #005f6b;
+
+}
+
+h4 {
+  text-align: center;
+  font-family: 'Times New Roman', sans-serif;
+  font-size: 17px;
+  color: black;
+
+}
+
+h5 {
+  text-align: center;
+  font-family: 'Times New Roman', sans-serif;
+  font-size: 18px;
+  color: #E53A40;
+  padding: 0px 0px;
+  vertical-align: middle;
+}
+
+text {
+  text-align: left;
+  font-family: 'Times New Roman', sans-serif;
+  font-size: 17px;
+  color: black;
+
+}
+
 ul {
   margin: 30px auto;
   text-align: center;
 }
+
 
 li {
   color: Black;
