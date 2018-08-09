@@ -75,6 +75,7 @@ post '/books/:id/sale' do
   bookk.sale
   bookk.units_up()
   bookk.update()
+  redirect to("/books/#{params["id"]}")
 end
 
 post '/books/:id/saletwo' do
@@ -82,6 +83,7 @@ post '/books/:id/saletwo' do
   bookk.sale
   bookk.units_up()
   bookk.update()
+  redirect to("/books/images")
 end
 
 post '/books/:id/salethree' do
@@ -89,6 +91,7 @@ post '/books/:id/salethree' do
   bookk.sale
   bookk.units_up()
   bookk.update()
+  redirect to("/books/imageslow")
 end
 
 #replenish
@@ -96,6 +99,7 @@ post '/books/:id/salefour' do
   bookk = Book.find(params['id'].to_i())
   bookk.replenish
   bookk.update()
+  redirect to("/books/imageslow")
 end
 
 #replenish
@@ -111,6 +115,7 @@ post '/books/:id/salesix' do
   bookk = Book.find(params['id'].to_i())
   bookk.replenish
   bookk.update()
+  redirect to("/books/images")
 end
 
 #delete
