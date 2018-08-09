@@ -1,5 +1,5 @@
 require('sinatra')
-require('sinatra/contrib/all if development?')
+require('sinatra/contrib/all') if development?
 require('pry-byebug')
 require_relative('./models/books.rb')
 require_relative('./models/publishers.rb')
