@@ -1,4 +1,3 @@
-require('pry-byebug')
 require_relative('../models/books.rb')
 require_relative('../models/publishers.rb')
 require_relative('../models/genres.rb')
@@ -188,5 +187,4 @@ After three years of qualification matches, the FIFA World Cup 2018 will open on
   })
 book5.save()
 
-binding.pry
 nil

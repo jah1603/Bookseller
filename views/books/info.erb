@@ -35,12 +35,12 @@
     </td>
     <td>
       <form method="post" action="/books/<%= @books.id() %>/salefive">
-        <input class="btn" type="submit" value="Replenish stock of '<%= @books.title() %>' ">
+        <input class="btn" type="submit" value="Replenish stock">
       </form>
     </td>
     <td>
       <form method="post" action="/books/<%= @books.id %>/delete">
-        <input class="btn" type="submit" value="Remove book from inventory">
+        <input class="btn" type="submit" value="Remove from inventory">
       </form>
     </td>
   </tr>

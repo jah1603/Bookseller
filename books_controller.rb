@@ -1,5 +1,5 @@
 require('sinatra')
-require('sinatra/contrib/all')
+require('sinatra/contrib/all if development?')
 require('pry-byebug')
 require_relative('./models/books.rb')
 require_relative('./models/publishers.rb')
@@ -109,6 +109,14 @@ post '/books/:id/salefive' do
   bookk.replenish
   bookk.update()
   redirect to("/books/#{params["id"]}")
+end
+
+#replenish
+post '/books/:id/salesix' do
+  bookk = Book.find(params['id'].to_i())
+  bookk.replenish
+  bookk.update()
+  redirect to("/books/images")
 end
 
 #delete

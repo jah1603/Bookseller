@@ -175,6 +175,8 @@ def self.mostprofit
 return Book.find(ids[title_max_profit_index])
 end
 
+
+
 def self.leastprofit
   profits = []
   for book in Book.all()

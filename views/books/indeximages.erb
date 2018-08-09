@@ -35,8 +35,13 @@
       </form>
     </td>
     <td>
+      <form method="post" action="/books/<%= book.id() %>/salesix">
+        <input class="btn" type="submit" value="Replenish stock">
+      </form>
+    </td>
+    <td>
       <form method="post" action="/books/<%= book.id %>/delete">
-        <input class="btn" type="submit" value="Remove '<%= book.title() %>' from inventory">
+        <input class="btn" type="submit" value="Remove from inventory">
       </form>
     </td>
   </tr>
