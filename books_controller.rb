@@ -66,7 +66,7 @@ end
 post '/books/:id' do
   book = Book.new(params)
   book.update()
-  redirect to("/books/#{params["id"]}")
+  redirect to("/books")
 end
 
 #sale
