@@ -133,6 +133,7 @@
 </div>
 <br></br>
 <h1>Falling stock levels</h1>
+  <% if @books.empty? %>
 <div class="row">
   <div class="col">
   <table class="center">
@@ -153,6 +154,9 @@
     <p></p>
   </div>
 </div>
+  <% else %>
+    <h2>All stock levels healthy</h5>
+  <% end %>
 <br></br>
 <tr>
 <td>
