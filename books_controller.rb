@@ -75,7 +75,7 @@ post '/books/:id/sale' do
   bookk.sale
   bookk.units_up()
   bookk.update()
-  redirect to("/books/#{params["id"]}")
+  redirect to("/books")
 end
 
 post '/books/:id/saletwo' do
