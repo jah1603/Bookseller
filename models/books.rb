@@ -63,7 +63,7 @@ class Book
   end
 
   def self.all()
-    sql = "SELECT * FROM books"
+    sql = "SELECT * FROM books ORDER BY title ASC"
     books = SqlRunner.run( sql )
     result = books.map { |book| Book.new( book ) }
     return result
