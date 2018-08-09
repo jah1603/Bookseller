@@ -1,7 +1,7 @@
-# Invent.story
+# [Invent.story](ttps://invent-story.herokuapp.com/)
 Combining Ruby code with SQL to enable an independent bookseller to monitor stock levels, publishers, genres, units sold and profit. Built using the web application framework Sinatra. 
 
-[View here:](https://invent-story.herokuapp.com/)
+[View here](https://invent-story.herokuapp.com/)
 
 This is a digital tool which monitors stock levels and stores information on books, publishers and book categories.
 
