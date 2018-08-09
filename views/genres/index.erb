@@ -6,8 +6,8 @@
       </tr>
       <% for genre in @genres %>
       <tr>
-        <h4><%= genre.name  %>
           <table class="center">
+            <h4><%= genre.name  %>
             <tr><td>
               <td>
                 <form method="get" action="/genres/<%= genre.id %>/books">
