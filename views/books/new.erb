@@ -10,8 +10,8 @@
         </td>
         <td>
           <label for="book-author">Author: </label>
-          <input id="book-author" type="text" style="width: 100px;" name="author" value="">
-          <datalist id="names">
+          <input list="authors" type="text" style="width: 100px;" name="author" value="">
+          <datalist id="authors">
             <% for book in @books %>
             <option value="<%= book.author %>"></option>
             <% end %>
