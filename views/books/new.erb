@@ -10,7 +10,11 @@
         </td>
         <td>
           <label for="book-author">Author: </label>
-          <input id="book-author" type="text" style="width: 100px;" name="author" value="">
+          <input id="book-author" type="text" style="width: 100px;" name="author" value=""><datalist id="names">
+            <% for books in @books %>
+            <option value="<%= book.author %>"></option>
+            <% end %>
+          </datalist>
         </td>
         <td>
           <label for="book-publication">Publication year: </label>
