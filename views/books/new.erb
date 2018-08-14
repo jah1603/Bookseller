@@ -55,11 +55,13 @@
         </tr>
         <tr>
           <table class="center">
+            <td>
+              <form method="post" action="/books/image">
+                <input name="url" type="file" name="file" accept="image/*">
+              </form>
+            </td>
           <td>
-            <label for="book-url">Image: </label>
-            <input id="book-url" type="text" style="width: 200px;" name="url" value="">
-          </td>
-
+        
           <td>
             <label for="book-summary">Summary: </label>
             <input id="book-summary" type="text" style="width: 180px;" name="summary" value="">
@@ -82,7 +84,7 @@
           </form>
           <td>
             <form method="get" action="/publishers/newbook">
-              <input class="btn" type="submit" value="Publisher not listed? Click here to add it">
+              <input class="btn" type="submit" value="Publisher not listed? Click to add">
             </form>
           </td>
           </tr>
