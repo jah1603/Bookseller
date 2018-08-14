@@ -56,6 +56,26 @@ get '/books/:id' do
 end
 
 #save
+post '/books/confirmnew' do
+  @title = params[:title]
+  @author = params[:author]
+  @publication_year = params[:publication_year]
+  @quantity = params[:quantity]
+  @publisher_id = params[:publisher_id]
+  @genre_id = params[:genre_id]
+  @wholesale_price = params[:wholesale_price]
+  @retail_price = params[:retail_price]
+  @summary = params[:summary]
+  @copies_sold = params[:copies_sold]
+  @filename = params[:file][:filename]
+  file = params[:file][:tempfile]
+  File.open("./public/images/#{@filename}", 'wb') do |image|
+    image.write(file.read)
+  end
+redirect to("/books/confirmnew")
+end
+
+#route for adding image and requesting confirmation from user
 post '/books' do
   book = Book.new(params)
   book.save()

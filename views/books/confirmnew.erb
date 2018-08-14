@@ -1,4 +1,4 @@
-<h1>Complete the fields to add a new book to the inventory.</h1>
+<h1>Please review the fields and then confirm.</h1>
 
 <div class="boxes_big">
   <div class="boxes">
@@ -6,11 +6,11 @@
       <form method="post" action="/books">
         <td>
           <label for="book-title">Title: </label>
-          <input id="book-title" type="text" style="width: 200px;" name="title" value="">
+          <input id="book-title" type="text" style="width: 200px;" name="title" value="<%=@title %>">
         </td>
         <td>
           <label for="book-author">Author: </label>
-          <input list="authors" type="text" style="width: 100px;" name="author" value="">
+          <input list="authors" type="text" style="width: 100px;" name="author" value="<%=@author %">
           <datalist id="authors">
             <% for book in @books %>
             <option value="<%= book.author %>"></option>
@@ -59,7 +59,7 @@
               <table class="center">
                 <td>
                   <label for="book-url" align="center">Image(jpg only):          </label>
-                    <input name="file" type="file" accept="image/*" style="width: 160px; height: 20px">
+                    <input name="url" type="file" accept="image/*" style="width: 160px; height: 20px">
                 </td>
           <td id="book-summary" style="width: 350px; height: 60px;">
             <label for="book-summary" align="center">Summary:</label>
@@ -77,7 +77,7 @@
     </div>
     <table class="center">
       <tr>
-        <form method="post" action="/books/confirmnew">
+        <form method="post" action="/books">
           <td>
             <input class="btn" type="submit" value="Save book to inventory">
           </td>
