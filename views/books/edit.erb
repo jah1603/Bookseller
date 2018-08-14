@@ -50,13 +50,17 @@
         </tr>
         <tr>
           <table class="center">
-          <td>
-            <label for="book-url">Image: </label>
-            <input id="book-url" type="text" style="width: 250px;" name="url" value="<%=@books.url %>">
-          </td>
-          <td>
-            <label for="book-summary">Summary: </label>
-            <input id="book-summary" type="text" style="width: 250px;" name="summary" value="<%=@books.summary%>">
+            <tr>
+              <table class="center">
+                <td>
+                  <label for="book-url" align="center">Image(jpg only):          </label>
+                    <input name="url" type="file" name="file" accept="image/*" style="width: 160px; height: 20px">
+                </td>
+          <td id="book-summary" style="width: 350px; height: 60px;">
+            <label for="book-summary" align="center">Summary:</label>
+            <textarea id="book-summary" rows="4" cols="50" id="book-summary" type="text" style="width: 350px; height: 60px; padding: 10px 0" name="summary">
+<%=@books.summary %>
+          </textarea>
           </td>
           <td>
             <label for="book-copies_sold">Copies sold: </label>

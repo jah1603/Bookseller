@@ -55,16 +55,16 @@
         </tr>
         <tr>
           <table class="center">
-            <td>
-              <form method="post" action="/books/image">
-                <input name="url" type="file" name="file" accept="image/*">
-              </form>
-            </td>
-          <td>
-        
-          <td>
-            <label for="book-summary">Summary: </label>
-            <input id="book-summary" type="text" style="width: 180px;" name="summary" value="">
+            <tr>
+              <table class="center">
+                <td>
+                  <label for="book-url" align="center">Image(jpg only):          </label>
+                    <input name="url" type="file" name="file" accept="image/*" style="width: 160px; height: 20px">
+                </td>
+          <td id="book-summary" style="width: 350px; height: 60px;">
+            <label for="book-summary" align="center">Summary:</label>
+            <textarea id="book-summary" rows="4" cols="50" id="book-summary" type="text" style="width: 350px; height: 60px; padding: 10px 0" name="summary">
+          </textarea>
           </td>
           <td>
             <label for="book-copies_sold">Copies sold: </label>

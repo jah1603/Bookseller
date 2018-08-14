@@ -125,18 +125,6 @@ post '/books/:id/delete' do
   redirect to("/books")
 end
 
-#upload book images
-post '/books/image' do
-  @name = params[:name]
-# binding.pry
-@filename = params[:file][:filename]
-file = params[:file][:tempfile]
-File.open("./public/images/logos/#{@filename}", 'wb') do |image|
-  image.write(file.read)
-end
-
-erb( :"merchant/image")
-end
 
 #index
 get '/publishers' do
