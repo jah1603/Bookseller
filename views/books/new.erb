@@ -3,7 +3,7 @@
 <div class="boxes_big">
   <div class="boxes">
     <table class="center">
-      <form method="post" action="/books">
+      <form method="get" action="/books/confirmnew" enctype="multipart/form-data">
         <td>
           <label for="book-title">Title: </label>
           <input id="book-title" type="text" style="width: 200px;" name="title" value="">
@@ -77,7 +77,7 @@
     </div>
     <table class="center">
       <tr>
-        <form method="post" action="/books/confirmnew">
+        <form method="get" action="/books/confirmnew">
           <td>
             <input class="btn" type="submit" value="Save book to inventory">
           </td>

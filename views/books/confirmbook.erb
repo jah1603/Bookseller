@@ -6,11 +6,11 @@
       <form method="post" action="/books">
         <td>
           <label for="book-title">Title: </label>
-          <input id="book-title" type="text" style="width: 200px;" name="title" value="<%=@title %>">
+          <input id="book-title" type="text" style="width: 200px;" name="title" value="">
         </td>
         <td>
           <label for="book-author">Author: </label>
-          <input list="authors" type="text" style="width: 100px;" name="author" value="<%=@author %">
+          <input list="authors" type="text" style="width: 100px;" name="author" value="">
           <datalist id="authors">
             <% for book in @books %>
             <option value="<%= book.author %>"></option>
@@ -58,8 +58,8 @@
             <tr>
               <table class="center">
                 <td>
-                  <label for="book-url" align="center">Image(jpg only):          </label>
-                    <input name="url" type="file" accept="image/*" style="width: 160px; height: 20px">
+                  <label for="book-url">Image: </label>
+                  <input id="book-url" type="text" style="width: 50px;" name="url" value="<%=@file%>">
                 </td>
           <td id="book-summary" style="width: 350px; height: 60px;">
             <label for="book-summary" align="center">Summary:</label>

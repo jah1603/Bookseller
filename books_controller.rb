@@ -56,26 +56,6 @@ get '/books/:id' do
 end
 
 #save
-post '/books/confirmnew' do
-  @title = params[:title]
-  @author = params[:author]
-  @publication_year = params[:publication_year]
-  @quantity = params[:quantity]
-  @publisher_id = params[:publisher_id]
-  @genre_id = params[:genre_id]
-  @wholesale_price = params[:wholesale_price]
-  @retail_price = params[:retail_price]
-  @summary = params[:summary]
-  @copies_sold = params[:copies_sold]
-  @filename = params[:file][:filename]
-  file = params[:file][:tempfile]
-  File.open("./public/images/#{@filename}", 'wb') do |image|
-    image.write(file.read)
-  end
-redirect to("/books/confirmnew")
-end
-
-#route for adding image and requesting confirmation from user
 post '/books' do
   book = Book.new(params)
   book.save()
@@ -86,7 +66,7 @@ end
 post '/books/:id' do
   book = Book.new(params)
   book.update()
-  redirect to("/books")
+  redirect to("/books/#{params["id"]}")
 end
 
 #sale
@@ -130,21 +110,12 @@ post '/books/:id/salefive' do
   redirect to("/books/#{params["id"]}")
 end
 
-#replenish
-post '/books/:id/salesix' do
-  bookk = Book.find(params['id'].to_i())
-  bookk.replenish
-  bookk.update()
-  redirect to("/books/images")
-end
-
 #delete
 post '/books/:id/delete' do
   book = Book.find(params['id'].to_i())
   book.delete()
   redirect to("/books")
 end
-
 
 #index
 get '/publishers' do
