@@ -110,6 +110,14 @@ post '/books/:id/salefive' do
   redirect to("/books/#{params["id"]}")
 end
 
+#replenish
+post '/books/:id/salesix' do
+  bookk = Book.find(params['id'].to_i())
+  bookk.replenish
+  bookk.update()
+  redirect to("/books/images")
+end
+
 #delete
 post '/books/:id/delete' do
   book = Book.find(params['id'].to_i())
